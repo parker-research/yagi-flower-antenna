@@ -1,6 +1,8 @@
 # yagi-flower-antenna
 A group of UHF yagi antennas, arranged in a flower pattern and connected with a SP6T RF switch, should enable coarse beam direction control (like an antenna rotator, but solid-state)
 
+The technical name for this not-all-that-novel approach is "faceted/switched-element array".
+
 ## Status
 
 In development. Expected completion: 2026-11-01.
@@ -10,10 +12,10 @@ In development. Expected completion: 2026-11-01.
 1. Antennas (6x yagi antennas, approx. 7 dBi each)
 2. Structural mount for antennas
 3. SP6T RF switch PCB
-  - Microcontroller
-  - SP6T RF switch IC
-  - SMA ports to each antenna + common
-4. Software for PCB microcontroller, masquerading as an antenna rotator
+    - Microcontroller
+    - SP6T or SP8T RF switch IC
+    - SMA ports to each antenna + common
+4. Firmware for PCB microcontroller, masquerading as an antenna rotator
 5. Cables to each antenna
 
 ## Why?
@@ -31,3 +33,9 @@ Consider an antenna being deployed in a remote location, like the arctic. As far
 - Downlink-only
 - Presents itself as a traditional antenna rotator, ensuring compatibility with existing antenna rotator software (e.g., SatNOGS Client, GPredict)
 - Solid-state (no moving parts) adds reliability and durability for harsh environments
+
+## Related Projects
+
+### Research Papers
+
+- "Concept of 3D Antenna Array for Sub-GHz Rotator-Less Small Satellite Ground Stations and Advanced IoT Gateways": https://www.mdpi.com/2673-4001/6/4/92 / https://doi.org/10.3390/telecom6040092

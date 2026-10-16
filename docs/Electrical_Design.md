@@ -106,3 +106,9 @@ The following are common LNA chips:
 - Use the TPS22917 to switch on/off single devices at a time.
 
 - With C_T open, the come-up time is 100us.
+
+### LNA Passives
+
+- Mainly follow this guide: http://www.g4ddk.com/PGA103amp.pdf
+- Validate components selection with this guide: https://nuclearrambo.com/wordpress/designing-and-testing-a-low-noise-amplifier-part-1/
+- Component part numbers: https://www.tau.ac.il/~stoledo/Bib/Pubs/Toledo-QEX-Jan-2015.pdf

@@ -524,6 +524,207 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1641,6 +1842,12 @@
 		(uuid "8b40eab8-3d25-4be3-92f8-5cbe90173380")
 	)
 	(junction
+		(at 88.9 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c96848fa-c52b-4794-ace1-da172296a844")
+	)
+	(junction
 		(at 158.75 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1762,6 +1969,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 60.96) (xy 88.9 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "355baded-3b37-44db-af74-003a25e47221")
+	)
+	(wire
+		(pts
 			(xy 123.19 46.99) (xy 125.73 46.99)
 		)
 		(stroke
@@ -1832,7 +2049,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 115.57) (xy 165.1 115.57)
+			(xy 158.75 115.57) (xy 165.1 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1882,7 +2099,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 46.99) (xy 102.87 46.99)
+			(xy 81.28 46.99) (xy 88.9 46.99)
 		)
 		(stroke
 			(width 0)
@@ -1902,7 +2119,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 71.12) (xy 129.54 97.79)
+			(xy 129.54 71.12) (xy 129.54 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1962,7 +2179,27 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 105.41) (xy 129.54 115.57)
+			(xy 88.9 46.99) (xy 102.87 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "785668c2-2ab1-4cf1-bf39-a8761bc21233")
+	)
+	(wire
+		(pts
+			(xy 88.9 68.58) (xy 88.9 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "799fa478-1b4d-45fa-afb5-422c3bd90ecd")
+	)
+	(wire
+		(pts
+			(xy 129.54 104.14) (xy 129.54 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2142,13 +2379,23 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 115.57) (xy 147.32 115.57)
+			(xy 129.54 115.57) (xy 151.13 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "df26a1c6-65e8-42eb-9faf-82ef1112076b")
+	)
+	(wire
+		(pts
+			(xy 88.9 46.99) (xy 88.9 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eae3f75a-bd85-421c-a9e0-edf9224577e9")
 	)
 	(wire
 		(pts
@@ -2252,7 +2499,7 @@
 	)
 	(hierarchical_label "LNA_ENABLE"
 		(shape input)
-		(at 96.52 46.99 180)
+		(at 81.28 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2271,6 +2518,91 @@
 			(justify left)
 		)
 		(uuid "7747fd96-ef35-418e-95d9-7a20ce21df8e")
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 88.9 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0131f986-4cfa-454c-8535-2f58e323e374")
+		(property "Reference" "#PWR027"
+			(at 88.9 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 88.9 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8005f6f-9599-4788-9fd1-c8f57352f346")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
+					(reference "#PWR029")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "#PWR027")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
@@ -2396,7 +2728,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 135.128 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -2635,7 +2967,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "347f69a6-762b-45af-b2e2-f8f5dfa24713")
-		(property "Reference" "R"
+		(property "Reference" "R1"
 			(at 67.31 139.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2657,7 +2989,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 62.992 140.97 90)
 			(hide yes)
 			(show_name no)
@@ -2702,6 +3034,10 @@
 					(reference "R7")
 					(unit 1)
 				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "R1")
+					(unit 1)
+				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
 					(reference "R4")
 					(unit 1)
@@ -2743,7 +3079,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 152.0952 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -2971,7 +3307,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 151.13 115.57 90)
+		(at 154.94 115.57 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2982,7 +3318,7 @@
 		(fields_autoplaced yes)
 		(uuid "4a78a26a-44c9-49ee-8eef-79f7cdfa25a1")
 		(property "Reference" "C2"
-			(at 151.13 107.95 90)
+			(at 154.94 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2992,7 +3328,7 @@
 			)
 		)
 		(property "Value" "1nF"
-			(at 151.13 110.49 90)
+			(at 154.94 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3001,8 +3337,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 154.94 114.6048 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 158.75 114.6048 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3013,7 +3349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 151.13 115.57 0)
+			(at 154.94 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3024,7 +3360,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 151.13 115.57 0)
+			(at 154.94 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3091,7 +3427,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 169.2148 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -3142,6 +3478,96 @@
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
 					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 88.9 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "6267d114-a379-4824-bb50-0e6d1e46af27")
+		(property "Reference" "R10"
+			(at 91.44 52.0699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 91.44 54.6099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 87.122 53.34 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 88.9 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "405a6a49-1a0c-427e-9d5b-757001e2c325")
+		)
+		(pin "1"
+			(uuid "a4397d42-e847-47cf-b7ca-7a594af0f8d9")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
+					(reference "R12")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "R10")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -3366,7 +3792,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 145.7452 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -3434,7 +3860,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b64d5c26-8967-4796-a379-be5a2e5fafed")
-		(property "Reference" "R"
+		(property "Reference" "R2"
 			(at 127 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3456,7 +3882,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 127.762 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -3499,6 +3925,10 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
 					(reference "R8")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "R2")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
@@ -3626,7 +4056,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 150.1648 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -3715,7 +4145,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 156.5148 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -3773,7 +4203,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 129.54 101.6 0)
+		(at 129.54 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3781,10 +4211,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c5abad15-a113-4b03-848c-6adf609a70fc")
-		(property "Reference" "L"
-			(at 130.81 100.3299 0)
+		(property "Reference" "L1"
+			(at 130.81 99.0599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3795,7 +4224,7 @@
 			)
 		)
 		(property "Value" "220nH"
-			(at 130.81 102.8699 0)
+			(at 130.81 101.5999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3805,8 +4234,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 129.54 101.6 0)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 129.54 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3816,8 +4245,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 129.54 101.6 0)
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773163&DocType=DS&DocLang=English"
+			(at 129.54 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3828,9 +4257,29 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 129.54 101.6 0)
+			(at 129.54 100.33 0)
 			(hide yes)
 			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "9-1624112-0"
+			(at 139.7 103.632 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21202145"
+			(at 138.684 105.918 0)
+			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -3848,6 +4297,10 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
 					(reference "L3")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "L1")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
@@ -3949,6 +4402,107 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 88.9 64.77 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "e06589c2-f8e0-4983-b040-f3844d03f39b")
+		(property "Reference" "D4"
+			(at 92.71 65.0874 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 92.71 67.6274 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 88.9 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 88.9 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 88.9 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "325f42e0-cec9-4b30-be0e-582910b2f024")
+		)
+		(pin "2"
+			(uuid "472ff3b3-ea88-4f3a-b17f-cb31b1dcf409")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
+					(reference "D6")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "D4")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:BAV99")
 		(at 81.28 138.43 180)
 		(unit 1)
@@ -3960,7 +4514,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e0b562b7-434c-4f80-907f-bdbf976c3fed")
-		(property "Reference" "D"
+		(property "Reference" "D1"
 			(at 81.28 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4028,6 +4582,10 @@
 					(reference "D3")
 					(unit 1)
 				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "D1")
+					(unit 1)
+				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
 					(reference "D2")
 					(unit 1)
@@ -4047,7 +4605,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5f3a66c-abb5-44f7-9274-f3477536bbe5")
-		(property "Reference" "C"
+		(property "Reference" "C1"
 			(at 95.25 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4067,7 +4625,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 99.06 114.6048 0)
 			(hide yes)
 			(show_name no)
@@ -4112,6 +4670,10 @@
 					(reference "C17")
 					(unit 1)
 				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "C1")
+					(unit 1)
+				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
 					(reference "C10")
 					(unit 1)
@@ -4131,7 +4693,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7b27537-3269-46d6-8e2e-598efb0b2909")
-		(property "Reference" "#PWR"
+		(property "Reference" "#PWR04"
 			(at 96.52 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -4192,6 +4754,10 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
 					(reference "#PWR022")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "#PWR04")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"

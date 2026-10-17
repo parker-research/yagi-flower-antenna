@@ -5,6 +5,245 @@
 	(uuid "34c91bd8-6a4d-4b7a-a401-3e0831f71c7b")
 	(paper "USLetter")
 	(lib_symbols
+		(symbol "00-lcsc-symbols:TS-1187A-B-A-B"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TS-1187A-B-A-B"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc_footprints:C318884_SW-SMD_4P-L5_1-W5_1-P3_70-LS6_5-TL_H1_5"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
+				(at -2.286 0.127 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "TS-1187A-B-A-B"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C318884"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "XKB Connection(中国星坤)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TS-1187A-B-A-B_1_1"
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -5.08) (xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.762) (xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0.508)
+					(radius 0.3175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 -2.794)
+					(radius 0.3175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.302) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 -5.08 180)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "00-project-symbols:RP2040-Zero"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -836,170 +1075,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power global)
 			(pin_numbers
@@ -1476,6 +1551,30 @@
 		(uuid "4fe82b39-32f4-4e50-85d4-660737677343")
 	)
 	(junction
+		(at 144.78 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "519aff9d-f0f7-44ed-bb95-691935318644")
+	)
+	(junction
+		(at 135.89 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "709012ed-ca8d-40ef-b55d-161f719d0b3a")
+	)
+	(junction
+		(at 135.89 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9636e114-7e0c-4aa9-8369-5027bf86cbdd")
+	)
+	(junction
+		(at 144.78 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99f96b0f-94ee-481a-ab15-0b2882b31fe8")
+	)
+	(junction
 		(at 186.69 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1579,16 +1678,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 123.19) (xy 144.78 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d388307-cf89-441a-aabe-f97f26a9dbb4")
-	)
-	(wire
-		(pts
 			(xy 135.89 142.24) (xy 135.89 147.32)
 		)
 		(stroke
@@ -1619,6 +1708,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 138.43) (xy 154.94 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "287b41e1-b964-415d-97f2-30f94a9e14f2")
+	)
+	(wire
+		(pts
 			(xy 146.05 123.19) (xy 144.78 123.19)
 		)
 		(stroke
@@ -1639,6 +1738,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 128.27) (xy 135.89 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e37fa9f-1e2d-4909-a089-b5b5c4a81221")
+	)
+	(wire
+		(pts
 			(xy 247.65 140.97) (xy 247.65 144.78)
 		)
 		(stroke
@@ -1656,6 +1765,16 @@
 			(type default)
 		)
 		(uuid "33719ba3-a060-4f4d-8b3e-53aa34c49b05")
+	)
+	(wire
+		(pts
+			(xy 144.78 123.19) (xy 144.78 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3abc89f9-7a16-4d8a-b051-28c9c190eb54")
 	)
 	(wire
 		(pts
@@ -1749,6 +1868,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 138.43) (xy 125.73 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6157acaf-be49-453b-a2a5-83741bb3e036")
+	)
+	(wire
+		(pts
 			(xy 146.05 142.24) (xy 144.78 142.24)
 		)
 		(stroke
@@ -1776,6 +1905,16 @@
 			(type default)
 		)
 		(uuid "72761342-7cf0-474f-940b-02c663d517cf")
+	)
+	(wire
+		(pts
+			(xy 154.94 128.27) (xy 144.78 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "748e9cff-68da-45b9-a793-83449ec3cf34")
 	)
 	(wire
 		(pts
@@ -1869,6 +2008,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 139.7) (xy 154.94 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a40f843-35fa-4c05-9b6e-9df5f4bb4652")
+	)
+	(wire
+		(pts
 			(xy 214.63 62.23) (xy 214.63 63.5)
 		)
 		(stroke
@@ -1896,6 +2045,26 @@
 			(type default)
 		)
 		(uuid "a193f6f5-3a60-423a-8180-18470e07ccb7")
+	)
+	(wire
+		(pts
+			(xy 144.78 128.27) (xy 144.78 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a478e816-bea2-4a19-aa00-ddd2f223ef2e")
+	)
+	(wire
+		(pts
+			(xy 135.89 139.7) (xy 135.89 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4c35133-abcc-4561-a85d-7fd717014498")
 	)
 	(wire
 		(pts
@@ -2029,7 +2198,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 142.24) (xy 135.89 138.43)
+			(xy 135.89 142.24) (xy 135.89 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2046,6 +2215,16 @@
 			(type default)
 		)
 		(uuid "ca6320d0-cd96-48f6-b4bb-09052a9e433c")
+	)
+	(wire
+		(pts
+			(xy 154.94 130.81) (xy 154.94 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd131cd8-71c7-4d0f-8d31-caeeddec90ca")
 	)
 	(wire
 		(pts
@@ -2119,6 +2298,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 128.27) (xy 135.89 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9325d68-8a58-412d-ba6b-568b5ad4cd51")
+	)
+	(wire
+		(pts
 			(xy 241.3 124.46) (xy 247.65 124.46)
 		)
 		(stroke
@@ -2126,6 +2315,26 @@
 			(type default)
 		)
 		(uuid "d9504dfc-7257-4252-85f6-d32246d23188")
+	)
+	(wire
+		(pts
+			(xy 125.73 139.7) (xy 135.89 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db5b469c-3c6d-47d9-a8a0-aae37c976fee")
+	)
+	(wire
+		(pts
+			(xy 125.73 130.81) (xy 125.73 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "deea0706-34df-4b02-a822-653660a42ce7")
 	)
 	(wire
 		(pts
@@ -2169,7 +2378,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 142.24) (xy 144.78 138.43)
+			(xy 144.78 142.24) (xy 144.78 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2186,6 +2395,16 @@
 			(type default)
 		)
 		(uuid "ee5c72e8-e0c2-42b2-b5f2-e5b616877537")
+	)
+	(wire
+		(pts
+			(xy 144.78 139.7) (xy 144.78 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0af2ad9-3db3-49f7-a9fa-3c2440fe1163")
 	)
 	(wire
 		(pts
@@ -2954,88 +3173,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 135.89 133.35 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0254a5ed-ebcb-4701-86d3-87d105191ee1")
-		(property "Reference" "SW1"
-			(at 134.62 132.0799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 134.62 134.6199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 140.97 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 135.89 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "246a8760-01d2-4339-8cf4-d7416339081b")
-		)
-		(pin "2"
-			(uuid "45305425-ed2a-465a-83cd-cd38dee2f35f")
-		)
-		(instances
-			(project "Antenna-Array-Switch-PCB"
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 158.75 67.31 0)
 		(unit 1)
@@ -3118,87 +3255,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 133.35 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1a72875d-6f2d-467d-955b-c69b5e4c94ef")
-		(property "Reference" "SW2"
-			(at 146.05 132.0799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 146.05 134.6199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 139.7 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 139.7 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7a2e739f-1c4b-4a16-8cf1-e738cbaa9ef2")
-		)
-		(pin "2"
-			(uuid "e18742f8-c05b-4347-b795-5169c09bcf73")
-		)
-		(instances
-			(project "Antenna-Array-Switch-PCB"
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
-					(reference "SW2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 53.34 44.45 0)
 		(unit 1)
@@ -3271,6 +3327,114 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
 					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "00-lcsc-symbols:TS-1187A-B-A-B")
+		(at 130.81 133.35 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2add11e8-9405-4c36-a9eb-dc1100dc3693")
+		(property "Reference" "SW1"
+			(at 133.096 134.366 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TS-1187A-B-A-B"
+			(at 130.81 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "00-lcsc-footprints:C318884_SW-SMD_4P-L5_1-W5_1-P3_70-LS6_5-TL_H1_5"
+			(at 130.81 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
+			(at 128.524 133.223 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "TS-1187A-B-A-B"
+			(at 130.81 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 130.81 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "XKB Connection(中国星坤)"
+			(at 130.81 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d805f211-5695-40fe-9c9a-b36deac488db")
+		)
+		(pin "3"
+			(uuid "6b2e7cf0-375e-499f-a809-a840f161c5ce")
+		)
+		(pin "4"
+			(uuid "d617e949-cfd1-43fb-a76b-d4b542700323")
+		)
+		(pin "2"
+			(uuid "3b6e2f76-b43a-45c6-9245-577a07e1047b")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -5154,6 +5318,114 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
 					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "00-lcsc-symbols:TS-1187A-B-A-B")
+		(at 149.86 133.35 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eaa0ffa9-2e6a-4291-9a31-b98854d5d269")
+		(property "Reference" "SW2"
+			(at 152.146 134.366 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TS-1187A-B-A-B"
+			(at 149.86 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "00-lcsc-footprints:C318884_SW-SMD_4P-L5_1-W5_1-P3_70-LS6_5-TL_H1_5"
+			(at 149.86 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
+			(at 147.574 133.223 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "TS-1187A-B-A-B"
+			(at 149.86 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 149.86 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "XKB Connection(中国星坤)"
+			(at 149.86 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7a8e9271-51b9-404e-aef9-94f619140dab")
+		)
+		(pin "3"
+			(uuid "d61c7d8a-c636-40b9-81c0-a8c76429e71b")
+		)
+		(pin "4"
+			(uuid "aae5f371-3bc1-4afd-aea8-c08eb57f52cd")
+		)
+		(pin "2"
+			(uuid "9e203df3-53fc-4090-ae0a-bd052f5a6f48")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/43ba60ef-378a-41d1-af5a-6e648ed87248"
+					(reference "SW2")
 					(unit 1)
 				)
 			)

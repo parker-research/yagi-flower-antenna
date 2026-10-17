@@ -726,12 +726,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:NetTie_2"
+		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0)
+				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -739,8 +739,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "NT"
-				(at 0 1.27 0)
+			(property "Reference" "H"
+				(at 0 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -749,8 +749,8 @@
 					)
 				)
 			)
-			(property "Value" "NetTie_2"
-				(at 0 -1.27 0)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -781,7 +781,7 @@
 					)
 				)
 			)
-			(property "Description" "Net tie, 2 pins"
+			(property "Description" "Mounting Hole with connection"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -792,7 +792,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "net tie short"
+			(property "ki_keywords" "mounting hole"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -803,7 +803,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Net*Tie*"
+			(property "ki_fp_filters" "MountingHole*Pad*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -814,13 +814,12 @@
 					)
 				)
 			)
-			(symbol "NetTie_2_0_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
 					(stroke
-						(width 0.254)
+						(width 1.27)
 						(type default)
 					)
 					(fill
@@ -828,9 +827,9 @@
 					)
 				)
 			)
-			(symbol "NetTie_2_1_1"
-				(pin passive line
-					(at -2.54 0 0)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
 					(length 2.54)
 					(name "1"
 						(effects
@@ -840,24 +839,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1414,132 +1395,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:GNDD"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "GNDD"
-				(at 0 -3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "GNDD_0_1"
-				(rectangle
-					(start -1.27 -1.524)
-					(end 1.27 -2.032)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GNDD_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(rectangle
 		(start 29.21 138.43)
@@ -1554,8 +1409,8 @@
 		(uuid "5dd3acd5-a2f8-4d68-8dc8-43d20d503a26")
 	)
 	(rectangle
-		(start 82.55 168.91)
-		(end 113.03 191.77)
+		(start 13.97 180.34)
+		(end 62.23 203.2)
 		(stroke
 			(width 0)
 			(type default)
@@ -1563,7 +1418,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "61fa7140-9925-4f4e-b4d6-84276c4449c2")
+		(uuid "6c2d50ca-db98-4b40-bf8b-82ac99adcc85")
 	)
 	(rectangle
 		(start 119.38 20.32)
@@ -1589,6 +1444,16 @@
 		)
 		(uuid "fe4b4d1a-56c9-447d-a60d-ddbe7b7e11e4")
 	)
+	(text "For RF impedance assessment.\nConnect to VNA."
+		(exclude_from_sim no)
+		(at 37.338 184.658 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "04eb7770-4bd7-47fd-afef-63ac44f5df31")
+	)
 	(text "Note: Get the wide temp. range \"I\" part.\nThis is the regulated \"analog 3v3\"."
 		(exclude_from_sim no)
 		(at 45.466 94.742 0)
@@ -1599,15 +1464,11 @@
 		)
 		(uuid "2ce05c72-0a23-4dde-a5db-16e52eb56052")
 	)
-	(text "TODO: Maybe use inductor."
-		(exclude_from_sim no)
-		(at 98.552 188.468 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "bea61a8e-e489-4082-9752-d5e72603c421")
+	(junction
+		(at 85.09 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "00f19c4d-b88c-40d7-b176-88e9cb8b37ad")
 	)
 	(junction
 		(at 44.45 165.1)
@@ -1646,6 +1507,12 @@
 		(uuid "8a319f99-871d-457b-91fa-00c41a661a0e")
 	)
 	(junction
+		(at 81.28 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9324444e-40b9-44ce-9a2c-d5a1572159b3")
+	)
+	(junction
 		(at 41.91 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1656,6 +1523,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aa8adcf7-875e-4090-ab69-cd6ed38986e2")
+	)
+	(junction
+		(at 76.2 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d148d1de-a160-4176-b86f-b1b1049b187b")
 	)
 	(junction
 		(at 41.91 121.92)
@@ -1691,7 +1564,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 29.21) (xy 147.32 29.21)
+			(xy 138.43 29.21) (xy 147.32 29.21)
 		)
 		(stroke
 			(width 0)
@@ -1731,6 +1604,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 80.01) (xy 193.04 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "156c97dd-9eda-42d4-b151-13e09ae2934e")
+	)
+	(wire
+		(pts
 			(xy 57.15 109.22) (xy 62.23 109.22)
 		)
 		(stroke
@@ -1748,6 +1631,16 @@
 			(type default)
 		)
 		(uuid "165b3c49-1a2b-4d46-829e-ce9746db5464")
+	)
+	(wire
+		(pts
+			(xy 48.26 196.85) (xy 48.26 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a78166e-c6ac-422d-8321-9a669c21eced")
 	)
 	(wire
 		(pts
@@ -1791,6 +1684,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 189.23) (xy 81.28 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26a6a7ab-23e3-4054-bee7-495b3f0332d4")
+	)
+	(wire
+		(pts
 			(xy 232.41 53.34) (xy 232.41 63.5)
 		)
 		(stroke
@@ -1818,6 +1721,16 @@
 			(type default)
 		)
 		(uuid "352e6e2d-f835-4391-b80f-93fbde9d7770")
+	)
+	(wire
+		(pts
+			(xy 85.09 187.96) (xy 85.09 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3843da47-a80b-41ad-b36b-ddce8be89dbe")
 	)
 	(wire
 		(pts
@@ -1851,13 +1764,23 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 45.72) (xy 147.32 45.72)
+			(xy 138.43 45.72) (xy 147.32 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "413f0d6c-aa62-4165-abc5-7a9104eb71c7")
+	)
+	(wire
+		(pts
+			(xy 185.42 113.03) (xy 199.39 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41b4ceb7-718a-4734-b411-42a89407d706")
 	)
 	(wire
 		(pts
@@ -1878,6 +1801,26 @@
 			(type default)
 		)
 		(uuid "482faa76-16bf-403a-8c70-644221db5db3")
+	)
+	(wire
+		(pts
+			(xy 185.42 96.52) (xy 195.58 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "484389d6-dd4b-44d7-8413-15e4ce45d0ec")
+	)
+	(wire
+		(pts
+			(xy 185.42 129.54) (xy 201.93 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f24c31c-05ce-414b-bdaf-dd937930332b")
 	)
 	(wire
 		(pts
@@ -1911,6 +1854,26 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 189.23) (xy 85.09 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6778d983-019e-491d-9fa5-c1b466b0c48e")
+	)
+	(wire
+		(pts
+			(xy 33.02 190.5) (xy 43.18 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68e761ce-3f07-4b4a-9a79-1e8304daf020")
+	)
+	(wire
+		(pts
 			(xy 62.23 165.1) (xy 49.53 165.1)
 		)
 		(stroke
@@ -1918,6 +1881,16 @@
 			(type default)
 		)
 		(uuid "6991c8ca-36ea-41b1-806b-652be18ba98b")
+	)
+	(wire
+		(pts
+			(xy 81.28 189.23) (xy 85.09 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ec4c39b-afe6-4126-87a5-7ddfc63b28bb")
 	)
 	(wire
 		(pts
@@ -1951,23 +1924,13 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 176.53) (xy 93.98 179.07)
+			(xy 199.39 113.03) (xy 199.39 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "792bc728-1310-4185-832c-f618f20390dd")
-	)
-	(wire
-		(pts
-			(xy 105.41 179.07) (xy 105.41 176.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ea3579b-8e89-4812-abc1-8d9ce96f9d2b")
+		(uuid "7930ce11-3852-417f-9c6b-8b51c75f4692")
 	)
 	(wire
 		(pts
@@ -1981,17 +1944,47 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 176.53) (xy 101.6 176.53)
+			(xy 195.58 96.52) (xy 195.58 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8179ccfb-0c4c-4958-98fe-4c22c411b01b")
+		(uuid "867a41d6-60b4-4ab1-aa72-07b11817e821")
 	)
 	(wire
 		(pts
-			(xy 143.51 63.5) (xy 147.32 63.5)
+			(xy 201.93 129.54) (xy 201.93 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "892cdcd8-8aca-4e32-b2ac-335ebfb03ba4")
+	)
+	(wire
+		(pts
+			(xy 204.47 60.96) (xy 207.01 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92deb2b9-85a4-45c9-8088-6af63d5cdf40")
+	)
+	(wire
+		(pts
+			(xy 138.43 146.05) (xy 147.32 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93945cc0-c3a0-4bf3-ad6e-fdbfb88579ff")
+	)
+	(wire
+		(pts
+			(xy 138.43 63.5) (xy 147.32 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2011,6 +2004,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 189.23) (xy 76.2 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0d04b0a-ff06-458a-abee-79d752041042")
+	)
+	(wire
+		(pts
 			(xy 27.94 105.41) (xy 27.94 109.22)
 		)
 		(stroke
@@ -2018,6 +2021,36 @@
 			(type default)
 		)
 		(uuid "a25d4d88-4e75-4418-afbe-9397d539148b")
+	)
+	(wire
+		(pts
+			(xy 199.39 55.88) (xy 207.01 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a494eb53-2a91-4c8b-943d-c708105dae9d")
+	)
+	(wire
+		(pts
+			(xy 204.47 146.05) (xy 204.47 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a762f178-ca19-4c68-a561-ea6c48fdc33e")
+	)
+	(wire
+		(pts
+			(xy 195.58 53.34) (xy 207.01 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9677550-bc2d-4b11-b1f8-70495e3011f3")
 	)
 	(wire
 		(pts
@@ -2051,6 +2084,26 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 146.05) (xy 204.47 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b389446a-cfb5-4bee-b332-7b445b68b9be")
+	)
+	(wire
+		(pts
+			(xy 76.2 187.96) (xy 76.2 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b402ee38-89b5-4c77-9008-a2390125bcde")
+	)
+	(wire
+		(pts
 			(xy 57.15 123.19) (xy 41.91 123.19)
 		)
 		(stroke
@@ -2058,6 +2111,26 @@
 			(type default)
 		)
 		(uuid "b506469b-e2fb-4d0a-8236-fa72ab360117")
+	)
+	(wire
+		(pts
+			(xy 201.93 58.42) (xy 207.01 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b70754e6-3e18-402b-967c-360dc0f411f4")
+	)
+	(wire
+		(pts
+			(xy 185.42 80.01) (xy 193.04 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb11bbf1-efac-4d48-8eb2-cf449ebc9c1c")
 	)
 	(wire
 		(pts
@@ -2131,6 +2204,26 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 50.8) (xy 207.01 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d60b4d6d-4130-4ea0-9a94-0dea1f5f8c54")
+	)
+	(wire
+		(pts
+			(xy 27.94 196.85) (xy 27.94 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd0e5499-6d04-46cb-8c72-1bc259f1980f")
+	)
+	(wire
+		(pts
 			(xy 30.48 121.92) (xy 41.91 121.92)
 		)
 		(stroke
@@ -2171,6 +2264,26 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 129.54) (xy 147.32 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e228cc82-05e6-4e33-af00-1398f2847c9b")
+	)
+	(wire
+		(pts
+			(xy 138.43 80.01) (xy 147.32 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3d33f7c-3adc-49fb-bf7a-0aa6d4fe1503")
+	)
+	(wire
+		(pts
 			(xy 57.15 119.38) (xy 57.15 123.19)
 		)
 		(stroke
@@ -2178,6 +2291,26 @@
 			(type default)
 		)
 		(uuid "e3e3024a-3f3d-42b2-8da0-1d928a07b9a9")
+	)
+	(wire
+		(pts
+			(xy 81.28 189.23) (xy 81.28 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5f55e51-d329-4289-8247-8ac815dd6798")
+	)
+	(wire
+		(pts
+			(xy 138.43 96.52) (xy 147.32 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e830cda5-4d53-404c-818d-5912357cf5a7")
 	)
 	(wire
 		(pts
@@ -2198,6 +2331,16 @@
 			(type default)
 		)
 		(uuid "ef82da71-4120-40ad-ab76-376f6137056c")
+	)
+	(wire
+		(pts
+			(xy 138.43 113.03) (xy 147.32 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f16165ef-f329-4e94-b9a6-d34bf8393c6d")
 	)
 	(wire
 		(pts
@@ -2229,19 +2372,33 @@
 		)
 		(uuid "f93d31e0-ae7f-4a53-bc5f-637a66f98ef3")
 	)
-	(wire
-		(pts
-			(xy 96.52 176.53) (xy 93.98 176.53)
+	(global_label "LNA_ENABLE_7"
+		(shape input)
+		(at 138.43 146.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "001562a8-09db-4858-a340-4a77d6cc625c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.8377 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
 		)
-		(uuid "f9ae98df-8532-4fe9-9f07-14d98986b44d")
 	)
 	(global_label "LNA_ENABLE_0"
 		(shape input)
-		(at 143.51 29.21 180)
+		(at 138.43 29.21 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2251,7 +2408,7 @@
 		)
 		(uuid "19cb447a-1109-44e3-9abe-e28516fda045")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.9177 29.21 0)
+			(at 121.8377 29.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2287,9 +2444,81 @@
 			)
 		)
 	)
+	(global_label "LNA_ENABLE_6"
+		(shape input)
+		(at 138.43 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2d0d4645-8b35-44c3-91c0-c4681347ea15")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.8377 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "LNA_ENABLE_3"
+		(shape input)
+		(at 138.43 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "31a2333a-34c5-46b4-ac7a-2fc31c8f4129")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.8377 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "LNA_ENABLE_5"
+		(shape input)
+		(at 138.43 113.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "577d58b5-de32-4616-932a-91ffe2dae12e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.8377 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "LNA_ENABLE_1"
 		(shape input)
-		(at 143.51 45.72 180)
+		(at 138.43 45.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2299,7 +2528,7 @@
 		)
 		(uuid "785a8072-7a1b-4baa-a596-de6e3fd2ab72")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.9177 45.72 0)
+			(at 121.8377 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2313,7 +2542,7 @@
 	)
 	(global_label "LNA_ENABLE_2"
 		(shape input)
-		(at 143.51 63.5 180)
+		(at 138.43 63.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2323,7 +2552,7 @@
 		)
 		(uuid "86efa52d-0b8d-41f4-938f-b10e878bd07d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.9177 63.5 0)
+			(at 121.8377 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2380,6 +2609,737 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "LNA_ENABLE_4"
+		(shape input)
+		(at 138.43 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b7d0f40c-7bf1-4feb-a86d-04529eb2420b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.8377 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 29.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c07f976-9f91-4c0f-a2de-4ceb5521a02e")
+		(property "Netclass" "RF"
+			(at 188.6585 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4e1b9c4c-ef8c-46b7-a017-a0136678963e")
+		(property "Netclass" "RF"
+			(at 141.584 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 35.56 190.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54cf2534-6cce-4ef3-bbcf-bf876eaed4b8")
+		(property "Netclass" "RF"
+			(at 36.2585 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 41.91 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "67e746b1-190a-4869-b771-202337ae2b16")
+		(property "Netclass" "RF"
+			(at 141.584 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "69b91f2e-ffec-469d-91e6-b1dba7ec97ab")
+		(property "Netclass" "RF"
+			(at 188.6585 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6ad8ffb5-cd4e-488e-8898-df1e017d5f4a")
+		(property "Netclass" "RF"
+			(at 188.6585 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6ffb8c3f-ad98-417a-9097-6cf27ddf86c5")
+		(property "Netclass" "RF"
+			(at 188.6585 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 129.54 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "713f1de7-f72c-4eed-9ad1-c12a73917c03")
+		(property "Netclass" "RF"
+			(at 188.6585 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7af2bbb9-17d2-4001-b336-2828dcbef8e2")
+		(property "Netclass" "RF"
+			(at 188.6585 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "81d09e18-787a-498c-9630-c9d32bd6274a")
+		(property "Netclass" "RF"
+			(at 188.6585 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8a8ca6e4-65f7-43ed-82a6-dc2e3f3ada57")
+		(property "Netclass" "RF"
+			(at 141.584 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.97 29.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "98209e35-d58b-4c41-920f-e2bc20ee0600")
+		(property "Netclass" "RF"
+			(at 141.6685 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.32 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 129.54 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c6e674b-de92-45f1-a887-250ba9fcd3e2")
+		(property "Netclass" "RF"
+			(at 141.584 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 146.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0a7b337-6d50-45b4-8444-a0a1254ad292")
+		(property "Netclass" "RF"
+			(at 141.584 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.97 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca08eaf2-a984-42d8-8599-3eb5caed7a10")
+		(property "Netclass" "RF"
+			(at 141.6685 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.32 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 187.96 146.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e0357c0e-583d-4504-a862-19453d01e5c9")
+		(property "Netclass" "RF"
+			(at 188.6585 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 194.31 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 229.87 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e8b81cbd-a43b-4fcd-8562-deaf019f75c8")
+		(property "Netclass" "RF"
+			(at 230.5685 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 236.22 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.8855 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e9280175-ad3e-4b51-8e99-ede222391eac")
+		(property "Netclass" "RF"
+			(at 141.584 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 147.2355 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 27.94 196.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "00d7d40a-4170-4b19-bf33-f5b9e9108dfa")
+		(property "Reference" "#PWR047"
+			(at 27.94 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 28.194 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 27.94 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "833db91d-46b3-4429-9b60-c621f0eab3e0")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "#PWR047")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -2456,6 +3416,86 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 76.2 193.04 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "051c5a35-0416-4226-a14e-7b09b55b3cca")
+		(property "Reference" "H3"
+			(at 78.74 194.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 73.66 193.0401 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 76.2 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 76.2 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f68603d-ccd0-4016-ac52-cec0ee5951d8")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -2616,6 +3656,86 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 85.09 185.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21aa73ca-c615-4b2d-8632-6cd665c27e7a")
+		(property "Reference" "H2"
+			(at 87.63 182.8799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 87.63 185.4199 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 85.09 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 85.09 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ad68d3e7-ad01-42c9-ae97-534bd260f70c")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -3015,8 +4135,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDA")
-		(at 93.98 179.07 0)
+		(lib_id "Connector:Conn_Coaxial")
+		(at 48.26 190.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3024,30 +4144,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "795f4f02-e825-40fc-a4e1-e14b462cdbfc")
-		(property "Reference" "#PWR039"
-			(at 93.98 185.42 0)
-			(hide yes)
+		(uuid "76cec23c-e6e0-47ee-8c6e-6df5326368d5")
+		(property "Reference" "J6"
+			(at 51.054 188.976 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GNDA"
-			(at 93.98 183.134 0)
+		(property "Value" "Conn_SMA"
+			(at 51.054 191.2229 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 93.98 179.07 0)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 48.26 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3058,7 +4179,87 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 179.07 0)
+			(at 48.26 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 48.26 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a185856f-2725-4575-928c-5ceceaf64584")
+		)
+		(pin "1"
+			(uuid "7d85c3ea-b6f8-4de0-9e6e-b1f2c3148abc")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 81.28 196.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "806a5259-2a1c-42de-97f5-3d73fc730806")
+		(property "Reference" "#PWR093"
+			(at 81.28 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 81.28 200.914 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3069,7 +4270,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 93.98 179.07 0)
+			(at 81.28 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3080,12 +4281,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d1b569b4-b795-44b5-b9de-4d6e313d56f8")
+			(uuid "31f7221d-f2b4-452f-88f9-7d23bfbf69f9")
 		)
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR039")
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -3169,6 +4370,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDA")
+		(at 48.26 196.85 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a03462c6-8673-4089-8da0-bcb03f053853")
+		(property "Reference" "#PWR048"
+			(at 48.26 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 48.006 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 48.26 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "da5e2d8b-fdef-4c6e-98a0-19f517e0ae85")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 57.15 115.57 0)
 		(mirror y)
@@ -3245,6 +4524,86 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 85.09 193.04 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b282fcdf-c4dd-4ee6-a7b3-d2f4b5478675")
+		(property "Reference" "H4"
+			(at 87.63 194.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 82.55 193.0401 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 85.09 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 85.09 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "88c21706-0172-40ac-ac06-8fc694b84e4d")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -3560,6 +4919,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 27.94 190.5 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b88f251b-9296-4d73-ba3f-34c59b89dc27")
+		(property "Reference" "J5"
+			(at 25.146 188.976 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_SMA"
+			(at 25.146 191.2229 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 27.94 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 27.94 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "0a0685d8-3254-4cfe-a10a-454679748ddb")
+		)
+		(pin "1"
+			(uuid "f7aaf0a6-8b93-415c-9d50-31a6317d6455")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 49.53 157.48 0)
 		(unit 1)
@@ -3801,8 +5242,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:NetTie_2")
-		(at 99.06 176.53 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 76.2 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3811,29 +5252,32 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d590701b-101a-45ad-b478-d92d7f080ff1")
-		(property "Reference" "NT1"
-			(at 99.06 171.45 0)
+		(uuid "e7d57f8a-3554-4c77-814f-767107606eaa")
+		(property "Reference" "H1"
+			(at 78.74 182.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "NetTie_2"
-			(at 99.06 173.99 0)
+		(property "Value" "MountingHole_Pad"
+			(at 78.74 185.4199 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "NetTie:NetTie-2_SMD_Pad2.0mm"
-			(at 99.06 176.53 0)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 76.2 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3844,7 +5288,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 176.53 0)
+			(at 76.2 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3854,89 +5298,8 @@
 				)
 			)
 		)
-		(property "Description" "Net tie, 2 pins"
-			(at 99.06 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "5ef14725-7f7e-44fb-8b0e-bc45e6b2e5a7")
-		)
-		(pin "1"
-			(uuid "5420c36d-8f68-4bb4-b5dc-8cb072d77bb4")
-		)
-		(instances
-			(project "Antenna-Array-Switch-PCB"
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "NT1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDD")
-		(at 105.41 179.07 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d6b10c80-118f-40c6-89ea-bb9e91f452e0")
-		(property "Reference" "#PWR040"
-			(at 105.41 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GNDD"
-			(at 105.41 182.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 105.41 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 105.41 179.07 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 76.2 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3947,12 +5310,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e938c47-7a96-4ec0-874d-c9693ed8a702")
+			(uuid "0758efdc-e496-4ab0-bfaa-387c5447559d")
 		)
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR040")
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -4086,6 +5449,138 @@
 		)
 	)
 	(sheet
+		(at 147.32 143.51)
+		(size 38.1 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6e88796b-cf86-4884-b4be-d1df3ead2331")
+		(property "Sheetname" "AntennaBranch7"
+			(at 147.32 142.7984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AntennaBranch.kicad_sch"
+			(at 147.32 154.2546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LNA_ENABLE" input
+			(at 147.32 146.05 180)
+			(uuid "21d47342-eb71-4a35-9e5f-0d065b227bfc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LNA_RF_OUTPUT" output
+			(at 185.42 146.05 0)
+			(uuid "eeffd236-c772-4418-9404-ce187ec63280")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 147.32 77.47)
+		(size 38.1 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "84b619c0-60cc-4043-91fe-88079e3abd03")
+		(property "Sheetname" "AntennaBranch3"
+			(at 147.32 76.7584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AntennaBranch.kicad_sch"
+			(at 147.32 88.2146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LNA_ENABLE" input
+			(at 147.32 80.01 180)
+			(uuid "bef89309-4ed1-4499-a7cf-f458cce6816d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LNA_RF_OUTPUT" output
+			(at 185.42 80.01 0)
+			(uuid "2b0d419e-5940-46bf-8b4f-7db2dc097002")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 147.32 60.96)
 		(size 38.1 10.16)
 		(exclude_from_sim no)
@@ -4147,6 +5642,72 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 147.32 110.49)
+		(size 38.1 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "89709504-9a74-4a41-97e7-0f367d9e3ee3")
+		(property "Sheetname" "AntennaBranch5"
+			(at 147.32 109.7784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AntennaBranch.kicad_sch"
+			(at 147.32 121.2346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LNA_ENABLE" input
+			(at 147.32 113.03 180)
+			(uuid "1cd9db7f-8d35-4f7c-b8e5-3747dbf608fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LNA_RF_OUTPUT" output
+			(at 185.42 113.03 0)
+			(uuid "b462a306-ff71-4e5c-8721-dda70eb380d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(page "8")
 				)
 			)
 		)
@@ -4279,6 +5840,138 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 147.32 93.98)
+		(size 38.1 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb")
+		(property "Sheetname" "AntennaBranch4"
+			(at 147.32 93.2684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AntennaBranch.kicad_sch"
+			(at 147.32 104.7246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LNA_ENABLE" input
+			(at 147.32 96.52 180)
+			(uuid "7c62319d-9da7-4e68-9e8d-c7ad9bb1e60b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LNA_RF_OUTPUT" output
+			(at 185.42 96.52 0)
+			(uuid "40d6856c-d550-4928-87ad-70cf5ba00191")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 147.32 127)
+		(size 38.1 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d3956d70-3b12-4dac-921d-ac4255b10b80")
+		(property "Sheetname" "AntennaBranch6"
+			(at 147.32 126.2884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AntennaBranch.kicad_sch"
+			(at 147.32 137.7446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LNA_ENABLE" input
+			(at 147.32 129.54 180)
+			(uuid "4eb48679-228b-4379-844c-4d05ef586786")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LNA_RF_OUTPUT" output
+			(at 185.42 129.54 0)
+			(uuid "194d7289-5582-4b0b-b9bc-b5d9a3841974")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(page "9")
 				)
 			)
 		)

@@ -515,13 +515,203 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "RF",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3058,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3
       }
     ],
     "meta": {
       "version": 5
     },
     "net_colors": {},
-    "netclass_assignments": {},
+    "netclass_assignments": {
+      "/AntennaBranch/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch1/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch2/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch3/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch4/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch5/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch6/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "/AntennaBranch7/LNA_RF_OUTPUT": [
+        "RF"
+      ],
+      "LNA_ENABLE_0": [
+        "RF"
+      ],
+      "LNA_ENABLE_1": [
+        "RF"
+      ],
+      "LNA_ENABLE_2": [
+        "RF"
+      ],
+      "LNA_ENABLE_3": [
+        "RF"
+      ],
+      "LNA_ENABLE_4": [
+        "RF"
+      ],
+      "LNA_ENABLE_5": [
+        "RF"
+      ],
+      "LNA_ENABLE_6": [
+        "RF"
+      ],
+      "LNA_ENABLE_7": [
+        "RF"
+      ],
+      "Net-(C1-Pad2)": [
+        "RF"
+      ],
+      "Net-(C10-Pad2)": [
+        "RF"
+      ],
+      "Net-(C13-Pad2)": [
+        "RF"
+      ],
+      "Net-(C14-Pad1)": [
+        "RF"
+      ],
+      "Net-(C17-Pad2)": [
+        "RF"
+      ],
+      "Net-(C2-Pad1)": [
+        "RF"
+      ],
+      "Net-(C20-Pad2)": [
+        "RF"
+      ],
+      "Net-(C21-Pad1)": [
+        "RF"
+      ],
+      "Net-(C28-Pad2)": [
+        "RF"
+      ],
+      "Net-(C31-Pad2)": [
+        "RF"
+      ],
+      "Net-(C32-Pad1)": [
+        "RF"
+      ],
+      "Net-(C35-Pad2)": [
+        "RF"
+      ],
+      "Net-(C38-Pad2)": [
+        "RF"
+      ],
+      "Net-(C39-Pad1)": [
+        "RF"
+      ],
+      "Net-(C42-Pad2)": [
+        "RF"
+      ],
+      "Net-(C45-Pad2)": [
+        "RF"
+      ],
+      "Net-(C46-Pad1)": [
+        "RF"
+      ],
+      "Net-(C49-Pad2)": [
+        "RF"
+      ],
+      "Net-(C5-Pad2)": [
+        "RF"
+      ],
+      "Net-(C52-Pad2)": [
+        "RF"
+      ],
+      "Net-(C53-Pad1)": [
+        "RF"
+      ],
+      "Net-(C56-Pad2)": [
+        "RF"
+      ],
+      "Net-(C59-Pad2)": [
+        "RF"
+      ],
+      "Net-(C60-Pad1)": [
+        "RF"
+      ],
+      "Net-(J1-In)": [
+        "RF"
+      ],
+      "Net-(J10-In)": [
+        "RF"
+      ],
+      "Net-(J11-In)": [
+        "RF"
+      ],
+      "Net-(J2-In)": [
+        "RF"
+      ],
+      "Net-(J3-In)": [
+        "RF"
+      ],
+      "Net-(J4-In)": [
+        "RF"
+      ],
+      "Net-(J5-In)": [
+        "RF"
+      ],
+      "Net-(J7-In)": [
+        "RF"
+      ],
+      "Net-(J8-In)": [
+        "RF"
+      ],
+      "Net-(J9-In)": [
+        "RF"
+      ],
+      "Net-(U10-QOD)": [
+        "RF"
+      ],
+      "Net-(U12-QOD)": [
+        "RF"
+      ],
+      "Net-(U14-QOD)": [
+        "RF"
+      ],
+      "Net-(U16-QOD)": [
+        "RF"
+      ],
+      "Net-(U18-QOD)": [
+        "RF"
+      ],
+      "Net-(U2-QOD)": [
+        "RF"
+      ],
+      "Net-(U3-QOD)": [
+        "RF"
+      ],
+      "Net-(U5-QOD)": [
+        "RF"
+      ]
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -665,7 +855,7 @@
         "uuid": "53a2d682-f221-4d2b-9002-0fe959bb1f68"
       }
     ],
-    "used_designators": "#PWR1-46,C1-27,D1-10,J1-4,L1-3,NT1,R1-24,SW1-3,U1-9",
+    "used_designators": "#PWR1-93,C1-62,D1-20,H1-4,J1-12,L1-8,NT1,R1-44,SW1-3,U1-19",
     "variants": []
   },
   "sheets": [
@@ -688,6 +878,26 @@
     [
       "872b3e63-a37e-49b3-8d67-29eb300db3b2",
       "AntennaBranch2"
+    ],
+    [
+      "84b619c0-60cc-4043-91fe-88079e3abd03",
+      "AntennaBranch3"
+    ],
+    [
+      "c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb",
+      "AntennaBranch4"
+    ],
+    [
+      "89709504-9a74-4a41-97e7-0f367d9e3ee3",
+      "AntennaBranch5"
+    ],
+    [
+      "d3956d70-3b12-4dac-921d-ac4255b10b80",
+      "AntennaBranch6"
+    ],
+    [
+      "6e88796b-cf86-4884-b4be-d1df3ead2331",
+      "AntennaBranch7"
     ]
   ],
   "text_variables": {},

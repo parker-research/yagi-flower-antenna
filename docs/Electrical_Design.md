@@ -112,3 +112,24 @@ The following are common LNA chips:
 - Mainly follow this guide: http://www.g4ddk.com/PGA103amp.pdf
 - Validate components selection with this guide: https://nuclearrambo.com/wordpress/designing-and-testing-a-low-noise-amplifier-part-1/
 - Component part numbers: https://www.tau.ac.il/~stoledo/Bib/Pubs/Toledo-QEX-Jan-2015.pdf
+
+### Noise Avoidance
+
+- Clip-on ferrites at both ends of the USB cable.
+- Use an RF shield/can over the RP2040-Zero to reduce noise.
+- Place a via fence across the board between the module area and the RF section, stitching L1, L2 and L4.
+- Filter each enable line as it leaves the module area: a series resistor of about 1 kΩ, which also slows the edges, plus 100 pF to 1 nF to ground. Repeat the filter at the switch device.
+- Filter power at the module’s input. Use a ferrite plus bulk and 100 pF capacitors, probably.
+
+## PCB Stackup
+
+Ordering from JLCPCB, use recommended "JLC04161H-7628" stackup (note: no "A" suffix).
+
+With the KiCad default clearance of 0.2mm, outside-layer RF traces (Coplanar Single Ended) should be 0.3058mm wide.
+
+![JLCPCB Stackup Calculator for JLC04161H-7628](./JLCPCB_Stackup_Calculator_JLC04161H-7628.png)
+
+### Layout Concept
+
+- GND pour on L1, L2, L4. Power pour(s) (3V3) on L3.
+- Route enable signals on L3.

@@ -31,7 +31,7 @@
 					)
 				)
 			)
-			(property "Footprint" "lcsc_footprints:C318884_SW-SMD_4P-L5_1-W5_1-P3_70-LS6_5-TL_H1_5"
+			(property "Footprint" "00-lcsc-footprints:C318884_SW-SMD_4P-L5_1-W5_1-P3_70-LS6_5-TL_H1_5"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -169,7 +169,7 @@
 						(type none)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 2.54 0)
 					(length 2.54)
 					(name "A"
@@ -187,7 +187,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 5.08 2.54 180)
 					(length 2.54)
 					(name "B"
@@ -205,7 +205,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 2.54)
 					(name "C"
@@ -223,7 +223,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 5.08 -5.08 180)
 					(length 2.54)
 					(name "D"

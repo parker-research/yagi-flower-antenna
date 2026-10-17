@@ -3752,7 +3752,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Filter:Filter_1411-5_1.4x1.1mm"
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
 			(at 241.3 45.72 0)
 			(hide yes)
 			(show_name no)

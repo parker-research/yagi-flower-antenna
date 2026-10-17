@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -585,130 +585,130 @@
       "LNA_ENABLE_7": [
         "RF"
       ],
-      "Net-(C1-Pad2)": [
+      "Net-(C1001-Pad2)": [
         "RF"
       ],
-      "Net-(C10-Pad2)": [
+      "Net-(C1004-Pad2)": [
         "RF"
       ],
-      "Net-(C13-Pad2)": [
+      "Net-(C1005-Pad1)": [
         "RF"
       ],
-      "Net-(C14-Pad1)": [
+      "Net-(C301-Pad2)": [
         "RF"
       ],
-      "Net-(C17-Pad2)": [
+      "Net-(C304-Pad2)": [
         "RF"
       ],
-      "Net-(C2-Pad1)": [
+      "Net-(C305-Pad1)": [
         "RF"
       ],
-      "Net-(C20-Pad2)": [
+      "Net-(C401-Pad2)": [
         "RF"
       ],
-      "Net-(C21-Pad1)": [
+      "Net-(C404-Pad2)": [
         "RF"
       ],
-      "Net-(C28-Pad2)": [
+      "Net-(C405-Pad1)": [
         "RF"
       ],
-      "Net-(C31-Pad2)": [
+      "Net-(C501-Pad2)": [
         "RF"
       ],
-      "Net-(C32-Pad1)": [
+      "Net-(C504-Pad2)": [
         "RF"
       ],
-      "Net-(C35-Pad2)": [
+      "Net-(C505-Pad1)": [
         "RF"
       ],
-      "Net-(C38-Pad2)": [
+      "Net-(C601-Pad2)": [
         "RF"
       ],
-      "Net-(C39-Pad1)": [
+      "Net-(C604-Pad2)": [
         "RF"
       ],
-      "Net-(C42-Pad2)": [
+      "Net-(C605-Pad1)": [
         "RF"
       ],
-      "Net-(C45-Pad2)": [
+      "Net-(C701-Pad2)": [
         "RF"
       ],
-      "Net-(C46-Pad1)": [
+      "Net-(C704-Pad2)": [
         "RF"
       ],
-      "Net-(C49-Pad2)": [
+      "Net-(C705-Pad1)": [
         "RF"
       ],
-      "Net-(C5-Pad2)": [
+      "Net-(C801-Pad2)": [
         "RF"
       ],
-      "Net-(C52-Pad2)": [
+      "Net-(C804-Pad2)": [
         "RF"
       ],
-      "Net-(C53-Pad1)": [
+      "Net-(C805-Pad1)": [
         "RF"
       ],
-      "Net-(C56-Pad2)": [
+      "Net-(C901-Pad2)": [
         "RF"
       ],
-      "Net-(C59-Pad2)": [
+      "Net-(C904-Pad2)": [
         "RF"
       ],
-      "Net-(C60-Pad1)": [
+      "Net-(C905-Pad1)": [
         "RF"
       ],
-      "Net-(J1-In)": [
+      "Net-(J1001-In)": [
         "RF"
       ],
-      "Net-(J10-In)": [
+      "Net-(J101-In)": [
         "RF"
       ],
-      "Net-(J11-In)": [
+      "Net-(J103-In)": [
         "RF"
       ],
-      "Net-(J2-In)": [
+      "Net-(J301-In)": [
         "RF"
       ],
-      "Net-(J3-In)": [
+      "Net-(J401-In)": [
         "RF"
       ],
-      "Net-(J4-In)": [
+      "Net-(J501-In)": [
         "RF"
       ],
-      "Net-(J5-In)": [
+      "Net-(J601-In)": [
         "RF"
       ],
-      "Net-(J7-In)": [
+      "Net-(J701-In)": [
         "RF"
       ],
-      "Net-(J8-In)": [
+      "Net-(J801-In)": [
         "RF"
       ],
-      "Net-(J9-In)": [
+      "Net-(J901-In)": [
         "RF"
       ],
-      "Net-(U10-QOD)": [
+      "Net-(U1001-QOD)": [
         "RF"
       ],
-      "Net-(U12-QOD)": [
+      "Net-(U301-QOD)": [
         "RF"
       ],
-      "Net-(U14-QOD)": [
+      "Net-(U401-QOD)": [
         "RF"
       ],
-      "Net-(U16-QOD)": [
+      "Net-(U501-QOD)": [
         "RF"
       ],
-      "Net-(U18-QOD)": [
+      "Net-(U601-QOD)": [
         "RF"
       ],
-      "Net-(U2-QOD)": [
+      "Net-(U701-QOD)": [
         "RF"
       ],
-      "Net-(U3-QOD)": [
+      "Net-(U801-QOD)": [
         "RF"
       ],
-      "Net-(U5-QOD)": [
+      "Net-(U901-QOD)": [
         "RF"
       ]
     },
@@ -728,7 +728,7 @@
   "schematic": {
     "annotate_start_num": 0,
     "annotation": {
-      "method": 0,
+      "method": 1,
       "sort_order": 0
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
@@ -855,7 +855,7 @@
         "uuid": "53a2d682-f221-4d2b-9002-0fe959bb1f68"
       }
     ],
-    "used_designators": "#PWR1-93,C1-62,D1-20,H1-5,J1-12,L1-8,NT1,R1-44,SW1-3,U1-19",
+    "used_designators": "#PWR1-93,#PWR101-111,#PWR201-210,#PWR301-309,#PWR401-409,#PWR501-509,#PWR601-609,#PWR701-709,#PWR801-809,#PWR901-909,#PWR1001-1009,C1-62,C101-106,C301-307,C401-407,C501-507,C601-607,C701-707,C801-807,C901-907,C1001-1007,D1-20,D201-204,D301-302,D401-402,D501-502,D601-602,D701-702,D801-802,D901-902,D1001-1002,H1-5,H101-105,J1-12,J101-103,J201,J301,J401,J501,J601,J701,J801,J901,J1001,L1-8,L301,L401,L501,L601,L701,L801,L901,L1001,NT1,R1-44,R201-212,R301-304,R401-404,R501-504,R601-604,R701-704,R801-804,R901-904,R1001-1004,SW1-3,SW201-202,U1-19,U101-102,U201,U301-302,U401-402,U501-502,U601-602,U701-702,U801-802,U901-902,U1001-1002",
     "variants": []
   },
   "sheets": [

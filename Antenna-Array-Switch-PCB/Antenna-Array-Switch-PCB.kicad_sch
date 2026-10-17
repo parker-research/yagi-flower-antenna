@@ -3287,7 +3287,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00d7d40a-4170-4b19-bf33-f5b9e9108dfa")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR0102"
 			(at 27.94 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -3347,7 +3347,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR047")
+					(reference "#PWR0102")
 					(unit 1)
 				)
 			)
@@ -3365,7 +3365,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "02d27214-c0da-482a-bb65-7b814663ed2e")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR0104"
 			(at 44.45 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -3425,7 +3425,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR08")
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -3443,7 +3443,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "051c5a35-0416-4226-a14e-7b09b55b3cca")
-		(property "Reference" "H3"
+		(property "Reference" "H102"
 			(at 78.74 194.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3505,7 +3505,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "H3")
+					(reference "H102")
 					(unit 1)
 				)
 			)
@@ -3523,7 +3523,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "06f7cedb-f2c4-4dbf-b6ad-c99a34830085")
-		(property "Reference" "C25"
+		(property "Reference" "C101"
 			(at 26.67 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3587,7 +3587,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C25")
+					(reference "C101")
 					(unit 1)
 				)
 			)
@@ -3605,7 +3605,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1582f11f-8709-4b2c-b30d-2400d2e51844")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR0110"
 			(at 217.17 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -3665,7 +3665,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR030")
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -3683,7 +3683,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21aa73ca-c615-4b2d-8632-6cd665c27e7a")
-		(property "Reference" "H2"
+		(property "Reference" "H103"
 			(at 87.63 182.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3745,7 +3745,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "H2")
+					(reference "H103")
 					(unit 1)
 				)
 			)
@@ -3763,7 +3763,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3fa20911-11ef-46d0-8501-be3dd1b2e367")
-		(property "Reference" "C3"
+		(property "Reference" "C102"
 			(at 40.64 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3827,7 +3827,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C3")
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -3845,7 +3845,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41ce93ca-c83a-4c16-9108-90b91c5b427f")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR0101"
 			(at 27.94 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -3905,7 +3905,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR032")
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -3923,7 +3923,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c07fe59-afef-4d6c-b2d7-7e43ad7a35bd")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR0107"
 			(at 69.85 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -3983,7 +3983,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR033")
+					(reference "#PWR0107")
 					(unit 1)
 				)
 			)
@@ -4000,7 +4000,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "666b13dd-1849-4faa-bfbd-a844bddeb763")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR0103"
 			(at 41.91 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -4060,7 +4060,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR031")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -4078,7 +4078,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b38d7a9-170e-49c8-94b6-f9a78ae264cc")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR0109"
 			(at 217.17 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -4138,7 +4138,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR034")
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -4155,7 +4155,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "76cec23c-e6e0-47ee-8c6e-6df5326368d5")
-		(property "Reference" "J6"
+		(property "Reference" "J102"
 			(at 51.054 188.976 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4219,7 +4219,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "J6")
+					(reference "J102")
 					(unit 1)
 				)
 			)
@@ -4236,7 +4236,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "806a5259-2a1c-42de-97f5-3d73fc730806")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR0108"
 			(at 81.28 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -4296,7 +4296,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR093")
+					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -4313,7 +4313,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8f1247d1-1506-4e47-b678-a37e020aae4e")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR0111"
 			(at 241.3 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -4373,7 +4373,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR035")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -4391,7 +4391,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a03462c6-8673-4089-8da0-bcb03f053853")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR0106"
 			(at 48.26 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -4451,7 +4451,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR048")
+					(reference "#PWR0106")
 					(unit 1)
 				)
 			)
@@ -4469,7 +4469,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a831ca95-6428-4ef9-90b6-3db6f35da03c")
-		(property "Reference" "C26"
+		(property "Reference" "C104"
 			(at 53.34 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4533,7 +4533,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C26")
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -4551,7 +4551,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b282fcdf-c4dd-4ee6-a7b3-d2f4b5478675")
-		(property "Reference" "H4"
+		(property "Reference" "H104"
 			(at 87.63 194.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4613,7 +4613,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "H4")
+					(reference "H104")
 					(unit 1)
 				)
 			)
@@ -4631,7 +4631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3224985-9c2e-4681-b689-58a02fa09d2a")
-		(property "Reference" "C24"
+		(property "Reference" "C106"
 			(at 66.04 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4695,7 +4695,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C24")
+					(reference "C106")
 					(unit 1)
 				)
 			)
@@ -4713,7 +4713,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b42c4ff3-9d31-481a-8ee5-08721617fe81")
-		(property "Reference" "U8"
+		(property "Reference" "U101"
 			(at 41.91 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4789,7 +4789,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "U8")
+					(reference "U101")
 					(unit 1)
 				)
 			)
@@ -4808,7 +4808,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b7a2b2fe-84fc-420a-82b6-4fa3ea723d81")
-		(property "Reference" "U7"
+		(property "Reference" "U102"
 			(at 220.2881 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4922,7 +4922,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "U7")
+					(reference "U102")
 					(unit 1)
 				)
 			)
@@ -4940,7 +4940,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b88f251b-9296-4d73-ba3f-34c59b89dc27")
-		(property "Reference" "J5"
+		(property "Reference" "J101"
 			(at 25.146 188.976 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5004,7 +5004,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "J5")
+					(reference "J101")
 					(unit 1)
 				)
 			)
@@ -5022,7 +5022,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c14352bb-0d7a-456b-a264-0189f471e9ac")
-		(property "Reference" "C4"
+		(property "Reference" "C103"
 			(at 53.34 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5086,7 +5086,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C4")
+					(reference "C103")
 					(unit 1)
 				)
 			)
@@ -5104,7 +5104,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c1cc5bdd-4c8f-4d53-a486-f4ae62c6815e")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR0105"
 			(at 44.45 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -5164,7 +5164,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "#PWR07")
+					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -5181,7 +5181,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c722f218-679c-44bb-8ae1-972582be1756")
-		(property "Reference" "J4"
+		(property "Reference" "J103"
 			(at 244.094 44.196 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5245,7 +5245,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "J4")
+					(reference "J103")
 					(unit 1)
 				)
 			)
@@ -5263,7 +5263,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7d57f8a-3554-4c77-814f-767107606eaa")
-		(property "Reference" "H1"
+		(property "Reference" "H101"
 			(at 78.74 182.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5325,7 +5325,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "H1")
+					(reference "H101")
 					(unit 1)
 				)
 			)
@@ -5342,7 +5342,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f1647197-f2d3-4af7-8e3d-6f5e781f81d1")
-		(property "Reference" "C27"
+		(property "Reference" "C105"
 			(at 66.04 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5406,7 +5406,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "C27")
+					(reference "C105")
 					(unit 1)
 				)
 			)
@@ -5424,7 +5424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f75f020f-59c3-4e72-a11b-e0b79041f424")
-		(property "Reference" "H5"
+		(property "Reference" "H105"
 			(at 95.25 189.2299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5486,7 +5486,7 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
-					(reference "H5")
+					(reference "H105")
 					(unit 1)
 				)
 			)

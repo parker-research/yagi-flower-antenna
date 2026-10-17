@@ -2741,7 +2741,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "07f7c0f7-c48d-423b-b607-e25841592938")
-		(property "Reference" "J1"
+		(property "Reference" "J301"
 			(at 50.8 114.5931 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2805,35 +2805,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "J11")
+					(reference "J1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "J7")
+					(reference "J601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "J3")
+					(reference "J501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "J9")
+					(reference "J801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "J1")
+					(reference "J301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "J2")
+					(reference "J401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "J8")
+					(reference "J701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "J10")
+					(reference "J901")
 					(unit 1)
 				)
 			)
@@ -2851,7 +2851,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2df0eb9e-736c-44d6-b2b7-c376a5fceb7b")
-		(property "Reference" "R3"
+		(property "Reference" "R304"
 			(at 135.89 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2915,35 +2915,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "R44")
+					(reference "R1004")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "R28")
+					(reference "R604")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "R9")
+					(reference "R504")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "R36")
+					(reference "R804")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "R3")
+					(reference "R304")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "R6")
+					(reference "R404")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "R32")
+					(reference "R704")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "R40")
+					(reference "R904")
 					(unit 1)
 				)
 			)
@@ -2961,7 +2961,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "327def01-c7bd-4625-a3f4-85dbd1560e39")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0301"
 			(at 54.61 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -3021,35 +3021,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR083")
+					(reference "#PWR01001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR027")
+					(reference "#PWR0601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR019")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR065")
+					(reference "#PWR0801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR01")
+					(reference "#PWR0301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR011")
+					(reference "#PWR0401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR056")
+					(reference "#PWR0701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR074")
+					(reference "#PWR0901")
 					(unit 1)
 				)
 			)
@@ -3066,7 +3066,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "32ef3607-237c-4be5-bef2-28990722a6e1")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR0308"
 			(at 148.59 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -3126,35 +3126,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR090")
+					(reference "#PWR01008")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR054")
+					(reference "#PWR0608")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR025")
+					(reference "#PWR0508")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR072")
+					(reference "#PWR0808")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR09")
+					(reference "#PWR0308")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR017")
+					(reference "#PWR0408")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR063")
+					(reference "#PWR0708")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR081")
+					(reference "#PWR0908")
 					(unit 1)
 				)
 			)
@@ -3172,7 +3172,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "347f69a6-762b-45af-b2e2-f8f5dfa24713")
-		(property "Reference" "R1"
+		(property "Reference" "R301"
 			(at 67.31 139.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3236,35 +3236,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "R41")
+					(reference "R1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "R25")
+					(reference "R601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "R7")
+					(reference "R501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "R33")
+					(reference "R801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "R1")
+					(reference "R301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "R4")
+					(reference "R401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "R29")
+					(reference "R701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "R37")
+					(reference "R901")
 					(unit 1)
 				)
 			)
@@ -3282,7 +3282,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "36948a49-c5f1-464a-b02f-0ab450fd1761")
-		(property "Reference" "C5"
+		(property "Reference" "C304"
 			(at 147.32 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3346,35 +3346,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C59")
+					(reference "C1004")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C31")
+					(reference "C604")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C20")
+					(reference "C504")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C45")
+					(reference "C804")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C5")
+					(reference "C304")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C13")
+					(reference "C404")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C38")
+					(reference "C704")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C52")
+					(reference "C904")
 					(unit 1)
 				)
 			)
@@ -3391,7 +3391,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3cb5b2b9-16af-45f7-9cbd-0e3ce3e8a80a")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR0303"
 			(at 80.01 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -3451,35 +3451,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR085")
+					(reference "#PWR01003")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR029")
+					(reference "#PWR0603")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR021")
+					(reference "#PWR0503")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR067")
+					(reference "#PWR0803")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR06")
+					(reference "#PWR0303")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR013")
+					(reference "#PWR0403")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR058")
+					(reference "#PWR0703")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR076")
+					(reference "#PWR0903")
 					(unit 1)
 				)
 			)
@@ -3496,7 +3496,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "484737e4-fcbd-4551-8245-ab4b29029bc4")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0307"
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3556,35 +3556,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR089")
+					(reference "#PWR01007")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR042")
+					(reference "#PWR0607")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR024")
+					(reference "#PWR0507")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR071")
+					(reference "#PWR0807")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR02")
+					(reference "#PWR0307")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR016")
+					(reference "#PWR0407")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR062")
+					(reference "#PWR0707")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR080")
+					(reference "#PWR0907")
 					(unit 1)
 				)
 			)
@@ -3602,7 +3602,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a78a26a-44c9-49ee-8eef-79f7cdfa25a1")
-		(property "Reference" "C2"
+		(property "Reference" "C305"
 			(at 154.94 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3664,35 +3664,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C60")
+					(reference "C1005")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C32")
+					(reference "C605")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C21")
+					(reference "C505")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C46")
+					(reference "C805")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C2")
+					(reference "C305")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C14")
+					(reference "C405")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C39")
+					(reference "C705")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C53")
+					(reference "C905")
 					(unit 1)
 				)
 			)
@@ -3710,7 +3710,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "5c91df23-58dd-44f6-93f5-acbfe383e080")
-		(property "Reference" "C7"
+		(property "Reference" "C307"
 			(at 173.99 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3774,35 +3774,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C62")
+					(reference "C1007")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C34")
+					(reference "C607")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C23")
+					(reference "C507")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C48")
+					(reference "C807")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C7")
+					(reference "C307")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C16")
+					(reference "C407")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C41")
+					(reference "C707")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C55")
+					(reference "C907")
 					(unit 1)
 				)
 			)
@@ -3820,7 +3820,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "6267d114-a379-4824-bb50-0e6d1e46af27")
-		(property "Reference" "R10"
+		(property "Reference" "R302"
 			(at 91.44 52.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3884,35 +3884,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "R42")
+					(reference "R1002")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "R26")
+					(reference "R602")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "R12")
+					(reference "R502")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "R34")
+					(reference "R802")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "R10")
+					(reference "R302")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "R11")
+					(reference "R402")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "R30")
+					(reference "R702")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "R38")
+					(reference "R902")
 					(unit 1)
 				)
 			)
@@ -3929,7 +3929,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7199222e-6f30-4b67-ae0e-4402581986eb")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR0306"
 			(at 111.76 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -3989,35 +3989,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR088")
+					(reference "#PWR01006")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR040")
+					(reference "#PWR0606")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR023")
+					(reference "#PWR0506")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR070")
+					(reference "#PWR0806")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR03")
+					(reference "#PWR0306")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR015")
+					(reference "#PWR0406")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR061")
+					(reference "#PWR0706")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR079")
+					(reference "#PWR0906")
 					(unit 1)
 				)
 			)
@@ -4035,7 +4035,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "955fae38-5fe7-47b8-b6dd-84e4ae6175e1")
-		(property "Reference" "U2"
+		(property "Reference" "U301"
 			(at 113.03 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4109,35 +4109,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "U18")
+					(reference "U1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "U10")
+					(reference "U601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "U5")
+					(reference "U501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "U14")
+					(reference "U801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "U2")
+					(reference "U301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "U3")
+					(reference "U401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "U12")
+					(reference "U701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "U16")
+					(reference "U901")
 					(unit 1)
 				)
 			)
@@ -4155,7 +4155,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a815f437-9ff3-44e8-8547-3580b8cbee9b")
-		(property "Reference" "C8"
+		(property "Reference" "C302"
 			(at 140.97 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4219,35 +4219,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C57")
+					(reference "C1002")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C29")
+					(reference "C602")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C18")
+					(reference "C502")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C43")
+					(reference "C802")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C8")
+					(reference "C302")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C11")
+					(reference "C402")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C36")
+					(reference "C702")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C50")
+					(reference "C902")
 					(unit 1)
 				)
 			)
@@ -4265,7 +4265,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b64d5c26-8967-4796-a379-be5a2e5fafed")
-		(property "Reference" "R2"
+		(property "Reference" "R303"
 			(at 127 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4329,35 +4329,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "R43")
+					(reference "R1003")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "R27")
+					(reference "R603")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "R8")
+					(reference "R503")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "R35")
+					(reference "R803")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "R2")
+					(reference "R303")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "R5")
+					(reference "R403")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "R31")
+					(reference "R703")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "R39")
+					(reference "R903")
 					(unit 1)
 				)
 			)
@@ -4374,7 +4374,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b6de744b-74ed-48da-a18d-50a1ca3c0f3c")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR0309"
 			(at 158.75 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -4434,35 +4434,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR091")
+					(reference "#PWR01009")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR055")
+					(reference "#PWR0609")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR026")
+					(reference "#PWR0509")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR073")
+					(reference "#PWR0809")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR010")
+					(reference "#PWR0309")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR018")
+					(reference "#PWR0409")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR064")
+					(reference "#PWR0709")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR082")
+					(reference "#PWR0909")
 					(unit 1)
 				)
 			)
@@ -4479,7 +4479,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b858949d-bc1d-4e1f-81ff-b96eaf85e62d")
-		(property "Reference" "C9"
+		(property "Reference" "C303"
 			(at 154.94 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4543,35 +4543,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C58")
+					(reference "C1003")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C30")
+					(reference "C603")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C19")
+					(reference "C503")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C44")
+					(reference "C803")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C9")
+					(reference "C303")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C12")
+					(reference "C403")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C37")
+					(reference "C703")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C51")
+					(reference "C903")
 					(unit 1)
 				)
 			)
@@ -4589,7 +4589,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ba9e0846-053e-44ca-9763-ee5eb0bd85fa")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR0304"
 			(at 88.9 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4649,35 +4649,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR086")
+					(reference "#PWR01004")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR053")
+					(reference "#PWR0604")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR051")
+					(reference "#PWR0504")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR068")
+					(reference "#PWR0804")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR049")
+					(reference "#PWR0304")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR050")
+					(reference "#PWR0404")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR059")
+					(reference "#PWR0704")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR077")
+					(reference "#PWR0904")
 					(unit 1)
 				)
 			)
@@ -4694,7 +4694,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf6e15ca-e837-445c-81f1-e87777f9056e")
-		(property "Reference" "C6"
+		(property "Reference" "C306"
 			(at 160.782 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4758,35 +4758,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C61")
+					(reference "C1006")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C33")
+					(reference "C606")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C22")
+					(reference "C506")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C47")
+					(reference "C806")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C6")
+					(reference "C306")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C15")
+					(reference "C406")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C40")
+					(reference "C706")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C54")
+					(reference "C906")
 					(unit 1)
 				)
 			)
@@ -4803,7 +4803,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c5abad15-a113-4b03-848c-6adf609a70fc")
-		(property "Reference" "L1"
+		(property "Reference" "L301"
 			(at 130.81 99.0599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4887,35 +4887,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "L8")
+					(reference "L1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "L4")
+					(reference "L601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "L3")
+					(reference "L501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "L6")
+					(reference "L801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "L1")
+					(reference "L301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "L2")
+					(reference "L401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "L5")
+					(reference "L701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "L7")
+					(reference "L901")
 					(unit 1)
 				)
 			)
@@ -4933,7 +4933,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d15fcf0e-b3a3-4043-a700-cf61be5cc854")
-		(property "Reference" "U1"
+		(property "Reference" "U302"
 			(at 114.3 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4998,35 +4998,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "U19")
+					(reference "U1002")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "U11")
+					(reference "U602")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "U6")
+					(reference "U502")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "U15")
+					(reference "U802")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "U1")
+					(reference "U302")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "U4")
+					(reference "U402")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "U13")
+					(reference "U702")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "U17")
+					(reference "U902")
 					(unit 1)
 				)
 			)
@@ -5044,7 +5044,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e06589c2-f8e0-4983-b040-f3844d03f39b")
-		(property "Reference" "D4"
+		(property "Reference" "D302"
 			(at 92.71 65.0874 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5119,35 +5119,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "D20")
+					(reference "D1002")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "D12")
+					(reference "D602")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "D6")
+					(reference "D502")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "D16")
+					(reference "D802")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "D4")
+					(reference "D302")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "D5")
+					(reference "D402")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "D14")
+					(reference "D702")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "D18")
+					(reference "D902")
 					(unit 1)
 				)
 			)
@@ -5165,7 +5165,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e0b562b7-434c-4f80-907f-bdbf976c3fed")
-		(property "Reference" "D1"
+		(property "Reference" "D301"
 			(at 81.28 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5230,35 +5230,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "D19")
+					(reference "D1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "D11")
+					(reference "D601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "D3")
+					(reference "D501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "D15")
+					(reference "D801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "D1")
+					(reference "D301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "D2")
+					(reference "D401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "D13")
+					(reference "D701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "D17")
+					(reference "D901")
 					(unit 1)
 				)
 			)
@@ -5276,7 +5276,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5f3a66c-abb5-44f7-9274-f3477536bbe5")
-		(property "Reference" "C1"
+		(property "Reference" "C301"
 			(at 95.25 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5338,35 +5338,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "C56")
+					(reference "C1001")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "C28")
+					(reference "C601")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "C17")
+					(reference "C501")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "C42")
+					(reference "C801")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "C1")
+					(reference "C301")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "C10")
+					(reference "C401")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "C35")
+					(reference "C701")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "C49")
+					(reference "C901")
 					(unit 1)
 				)
 			)
@@ -5384,7 +5384,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7b27537-3269-46d6-8e2e-598efb0b2909")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR0305"
 			(at 96.52 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -5444,35 +5444,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR087")
+					(reference "#PWR01005")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR039")
+					(reference "#PWR0605")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR022")
+					(reference "#PWR0505")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR069")
+					(reference "#PWR0805")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR04")
+					(reference "#PWR0305")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR014")
+					(reference "#PWR0405")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR060")
+					(reference "#PWR0705")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR078")
+					(reference "#PWR0905")
 					(unit 1)
 				)
 			)
@@ -5489,7 +5489,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eceecd0a-c95a-45eb-9da3-7528714416e3")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0302"
 			(at 64.77 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5549,35 +5549,35 @@
 		(instances
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "#PWR084")
+					(reference "#PWR01002")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "#PWR028")
+					(reference "#PWR0602")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR020")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "#PWR066")
+					(reference "#PWR0802")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR05")
+					(reference "#PWR0302")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR012")
+					(reference "#PWR0402")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "#PWR057")
+					(reference "#PWR0702")
 					(unit 1)
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "#PWR075")
+					(reference "#PWR0902")
 					(unit 1)
 				)
 			)

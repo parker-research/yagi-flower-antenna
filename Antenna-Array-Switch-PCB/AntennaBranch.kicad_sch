@@ -1705,6 +1705,132 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:GNDD"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GNDD"
+				(at 0 -3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GNDD_0_1"
+				(rectangle
+					(start -1.27 -1.524)
+					(end 1.27 -2.032)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GNDD_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Static\nDischarge"
 		(exclude_from_sim no)
@@ -2099,7 +2225,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 46.99) (xy 88.9 46.99)
+			(xy 85.09 46.99) (xy 88.9 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2499,7 +2625,7 @@
 	)
 	(hierarchical_label "LNA_ENABLE"
 		(shape input)
-		(at 81.28 46.99 180)
+		(at 85.09 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2518,91 +2644,6 @@
 			(justify left)
 		)
 		(uuid "7747fd96-ef35-418e-95d9-7a20ce21df8e")
-	)
-	(symbol
-		(lib_id "power:GNDA")
-		(at 88.9 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0131f986-4cfa-454c-8535-2f58e323e374")
-		(property "Reference" "#PWR027"
-			(at 88.9 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 88.9 74.93 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 88.9 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 88.9 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f8005f6f-9599-4788-9fd1-c8f57352f346")
-		)
-		(instances
-			(project "Antenna-Array-Switch-PCB"
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "#PWR029")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "#PWR027")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
@@ -3568,6 +3609,92 @@
 				)
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDD")
+		(at 88.9 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "678d5d85-18ca-4ec5-adf3-b3e7cfd6320d")
+		(property "Reference" "#PWR027"
+			(at 88.9 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDD"
+			(at 88.9 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
+			(at 88.9 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "543ec1a9-2526-4f3c-9466-3fbb9d29b9cb")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
+					(reference "#PWR029")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "#PWR027")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)

@@ -133,3 +133,11 @@ With the KiCad default clearance of 0.2mm, outside-layer RF traces (Coplanar Sin
 
 - GND pour on L1, L2, L4. Power pour(s) (3V3) on L3.
 - Route enable signals on L3.
+
+## Component Selection
+
+- Bleed resistor (1M): Mostly anything is fine. Consider >50-100V for support with brief ESD transients.
+- On RF capacitors:
+    1. Use C0G/NP0 dielectric, never X7R or X5R. This matters most, especially on the input cap.
+    2. Murata is a good manufacturer.
+    3. 50V to 100V rating is ideal.

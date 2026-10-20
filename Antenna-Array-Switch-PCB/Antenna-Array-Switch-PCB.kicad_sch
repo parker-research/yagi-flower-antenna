@@ -1617,6 +1617,12 @@
 		(uuid "02700422-81ad-4b90-8402-f789b1c259e0")
 	)
 	(junction
+		(at 240.03 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14fd7e73-409f-456c-9bf2-8668d8e3388d")
+	)
+	(junction
 		(at 49.53 148.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1659,6 +1665,12 @@
 		(uuid "a1e7b625-81af-4819-a2e3-a613da66f015")
 	)
 	(junction
+		(at 238.76 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a587ebb2-ea77-4a61-a043-dfe54f327bad")
+	)
+	(junction
 		(at 44.45 148.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1697,6 +1709,16 @@
 			(type default)
 		)
 		(uuid "0043ea79-5d9d-4750-b213-e60c88fab492")
+	)
+	(wire
+		(pts
+			(xy 236.22 147.32) (xy 236.22 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0491a457-7f74-4140-8193-761f04e12a52")
 	)
 	(wire
 		(pts
@@ -1930,6 +1952,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 147.32) (xy 240.03 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e1c299f-159a-419d-a491-9ca84d125106")
+	)
+	(wire
+		(pts
 			(xy 232.41 87.63) (xy 232.41 92.71)
 		)
 		(stroke
@@ -2070,6 +2102,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 147.32) (xy 236.22 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a76f6fd-11bf-4d03-b18e-5e4cd995de69")
+	)
+	(wire
+		(pts
 			(xy 81.28 189.23) (xy 85.09 189.23)
 		)
 		(stroke
@@ -2110,6 +2152,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 157.48) (xy 242.57 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76fc212f-bbbf-4579-95e9-c7f568f8366d")
+	)
+	(wire
+		(pts
 			(xy 199.39 113.03) (xy 199.39 55.88)
 		)
 		(stroke
@@ -2140,6 +2192,26 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 146.05) (xy 240.03 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88fa622d-f5a1-4bdb-b653-57365ff4df87")
+	)
+	(wire
+		(pts
+			(xy 236.22 156.21) (xy 236.22 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88fbe5a4-afa6-4968-8e13-9799d8596b89")
+	)
+	(wire
+		(pts
 			(xy 201.93 129.54) (xy 201.93 58.42)
 		)
 		(stroke
@@ -2147,6 +2219,16 @@
 			(type default)
 		)
 		(uuid "892cdcd8-8aca-4e32-b2ac-335ebfb03ba4")
+	)
+	(wire
+		(pts
+			(xy 242.57 148.59) (xy 242.57 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89e3b2df-8d60-429e-a17e-b64b6e4c3e5b")
 	)
 	(wire
 		(pts
@@ -2247,6 +2329,16 @@
 			(type default)
 		)
 		(uuid "a9b5d20e-3f33-45b4-8a8b-530d117c45e0")
+	)
+	(wire
+		(pts
+			(xy 238.76 158.75) (xy 238.76 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9f6f1ec-2738-4ca3-959f-7607d065f7e7")
 	)
 	(wire
 		(pts
@@ -2480,6 +2572,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 157.48) (xy 238.76 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2de7379-36f7-4d41-a8be-6e4103964f25")
+	)
+	(wire
+		(pts
 			(xy 138.43 80.01) (xy 147.32 80.01)
 		)
 		(stroke
@@ -2577,6 +2679,16 @@
 			(type default)
 		)
 		(uuid "f93d31e0-ae7f-4a53-bc5f-637a66f98ef3")
+	)
+	(wire
+		(pts
+			(xy 238.76 157.48) (xy 242.57 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f97e69f8-cc23-4daf-95e1-1836f14d7a61")
 	)
 	(global_label "LNA_ENABLE_7"
 		(shape input)
@@ -4821,6 +4933,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 242.57 152.4 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a5bf516-003f-4ada-a9cf-4866b0bd066c")
+		(property "Reference" "C111"
+			(at 245.872 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1nF"
+			(at 245.872 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 241.6048 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 242.57 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77026"
+			(at 247.904 155.702 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fc2f583d-4188-44b5-be93-ecf23936303b")
+		)
+		(pin "2"
+			(uuid "f8b13f22-77d3-43c0-8c4d-3098e3c3e268")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "C111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDA")
 		(at 81.28 196.85 0)
 		(unit 1)
@@ -5297,6 +5500,98 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 236.22 152.4 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b0729ead-feab-4393-ab49-d1c7244ff2c3")
+		(property "Reference" "C110"
+			(at 232.41 151.1299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100pF"
+			(at 232.41 153.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 237.1852 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 236.22 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14858"
+			(at 228.346 156.21 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "728f2083-6864-4530-9e7e-3f3c7087d66d")
+		)
+		(pin "2"
+			(uuid "a3777f83-58ed-4629-a6cc-89e3731b1f49")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "C110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 85.09 193.04 180)
 		(unit 1)
@@ -5762,6 +6057,162 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(reference "J101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 238.76 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb1900e9-e673-4777-af6d-a474be27b25c")
+		(property "Reference" "#PWR0117"
+			(at 238.76 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 238.76 163.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 238.76 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 238.76 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 238.76 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cee0795c-72ad-4dca-bd11-42e2f9b3ebb9")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "#PWR0117")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 240.03 146.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb753765-ac29-44a1-bf98-3d4b1b7d8d97")
+		(property "Reference" "#PWR0116"
+			(at 240.03 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 240.03 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 240.03 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7bbf80f-346f-46fb-b5c8-162ff297d908")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)

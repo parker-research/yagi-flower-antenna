@@ -865,8 +865,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:BAV99"
+		(symbol "Diode:ESD131-B1-W0201"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
+				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -875,16 +879,6 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "D"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "BAV99"
 				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -894,18 +888,17 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 0 -12.7 0)
+			(property "Value" "ESD131-B1-W0201"
+				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+			(property "Footprint" "Diode_SMD:Infineon_SG-WLL-2-3_0.58x0.28_P0.36mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -916,7 +909,7 @@
 					)
 				)
 			)
-			(property "Description" "BAV99 High-speed switching diodes, SOT-23"
+			(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-ESD131-B1-W0201-DataSheet-v02_00-EN.pdf?fileId=5546d4625cc9456a015ce94850964889"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -927,7 +920,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "diode"
+			(property "Description" "Bidirectional ESD protection diode, ±5.5Vrwm, 0.23pF, SG-WLL-2-3"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -938,7 +931,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT?23*"
+			(property "ki_keywords" "diode TVS ESD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -949,10 +942,45 @@
 					)
 				)
 			)
-			(symbol "BAV99_0_1"
+			(property "ki_fp_filters" "*SG?WLL?2?3*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ESD131-B1-W0201_0_1"
 				(polyline
 					(pts
-						(xy -5.08 0) (xy 5.08 0)
+						(xy -2.54 -1.27) (xy 0 0) (xy -2.54 1.27) (xy -2.54 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
 					)
 					(stroke
 						(width 0)
@@ -962,83 +990,24 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy 2.54 -1.27) (xy 0 0) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "BAV99_1_1"
-				(polyline
-					(pts
-						(xy -3.81 1.27) (xy -1.27 0) (xy -3.81 -1.27) (xy -3.81 1.27) (xy -3.81 1.27) (xy -3.81 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 3.81 0) (xy 1.27 -1.27) (xy 1.27 1.27) (xy 1.27 1.27) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.81 -1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			(symbol "ESD131-B1-W0201_1_1"
 				(pin passive line
-					(at -7.62 0 0)
+					(at -3.81 0 0)
 					(length 2.54)
-					(name "K"
+					(name "A1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1054,9 +1023,9 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 0 180)
+					(at 3.81 0 180)
 					(length 2.54)
-					(name "A"
+					(name "A2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1064,24 +1033,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1729,7 +1680,7 @@
 	)
 	(text "ESD\nShock"
 		(exclude_from_sim no)
-		(at 92.202 137.414 0)
+		(at 86.36 135.89 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1866,12 +1817,6 @@
 		(uuid "e768043c-26a0-4e5f-84e7-d7bbe48740e6")
 	)
 	(junction
-		(at 80.01 147.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e916b281-8948-4508-8ffb-7adb986c09fe")
-	)
-	(junction
 		(at 144.78 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1912,16 +1857,6 @@
 			(type default)
 		)
 		(uuid "0cecaa3b-d137-489b-ab71-3134aae394d9")
-	)
-	(wire
-		(pts
-			(xy 81.28 115.57) (xy 81.28 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "117b3344-f913-425d-ab80-1460987497a8")
 	)
 	(wire
 		(pts
@@ -2145,16 +2080,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 147.32) (xy 80.01 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c2aeb23-86bc-4453-9ce3-794788ddd83e")
-	)
-	(wire
-		(pts
 			(xy 129.54 71.12) (xy 129.54 96.52)
 		)
 		(stroke
@@ -2335,6 +2260,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 115.57) (xy 81.28 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a016983f-1dd6-41c9-93d0-45ae2e7ae2d4")
+	)
+	(wire
+		(pts
 			(xy 99.06 115.57) (xy 106.68 115.57)
 		)
 		(stroke
@@ -2375,7 +2310,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 148.59) (xy 80.01 147.32)
+			(xy 81.28 148.59) (xy 81.28 144.78)
 		)
 		(stroke
 			(width 0)
@@ -2445,16 +2380,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 138.43) (xy 73.66 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed04a0f6-e01c-49ab-a64b-8922d3a60b7b")
-	)
-	(wire
-		(pts
 			(xy 144.78 43.18) (xy 144.78 46.99)
 		)
 		(stroke
@@ -2485,16 +2410,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 138.43) (xy 88.9 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2d94419-3464-46b7-b712-2f1e441eac15")
-	)
-	(wire
-		(pts
 			(xy 64.77 115.57) (xy 64.77 137.16)
 		)
 		(stroke
@@ -2522,16 +2437,6 @@
 			(type default)
 		)
 		(uuid "f5ceb52c-3145-421d-974f-d446c7fbca6b")
-	)
-	(wire
-		(pts
-			(xy 73.66 147.32) (xy 80.01 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7367b93-862a-431c-afba-d5b8fcee0dda")
 	)
 	(wire
 		(pts
@@ -3215,7 +3120,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "347f69a6-762b-45af-b2e2-f8f5dfa24713")
 		(property "Reference" "R301"
@@ -3383,6 +3288,16 @@
 				)
 			)
 		)
+		(property "LCSC" "C14858"
+			(at 143.256 93.98 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f124345f-4294-4899-ac4b-3a14843425ed")
 		)
@@ -3536,7 +3451,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDA")
-		(at 80.01 148.59 0)
+		(at 81.28 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3546,7 +3461,7 @@
 		(dnp no)
 		(uuid "3cb5b2b9-16af-45f7-9cbd-0e3ce3e8a80a")
 		(property "Reference" "#PWR0303"
-			(at 80.01 154.94 0)
+			(at 81.28 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3557,7 +3472,7 @@
 			)
 		)
 		(property "Value" "GNDA"
-			(at 79.756 152.4 0)
+			(at 81.026 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3567,7 +3482,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 80.01 148.59 0)
+			(at 81.28 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3578,7 +3493,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 148.59 0)
+			(at 81.28 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3589,7 +3504,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 80.01 148.59 0)
+			(at 81.28 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3754,7 +3669,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4a78a26a-44c9-49ee-8eef-79f7cdfa25a1")
 		(property "Reference" "C305"
 			(at 154.94 107.95 90)
@@ -3801,6 +3715,16 @@
 		(property "Description" "Unpolarized capacitor"
 			(at 154.94 115.57 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77026"
+			(at 154.94 119.634 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3971,7 +3895,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c91df23-58dd-44f6-93f5-acbfe383e080")
 		(property "Reference" "C307"
@@ -4081,7 +4005,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6267d114-a379-4824-bb50-0e6d1e46af27")
 		(property "Reference" "R302"
@@ -5075,7 +4999,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1n"
+		(property "Value" "1nF"
 			(at 160.782 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5111,6 +5035,16 @@
 		(property "Description" "Unpolarized capacitor"
 			(at 157.48 90.17 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77026"
+			(at 162.814 93.472 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5195,7 +5129,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
 			(at 129.54 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -5228,24 +5162,26 @@
 				)
 			)
 		)
-		(property "Part" "9-1624112-0"
-			(at 139.7 103.632 0)
+		(property "Part" "LQW2BASR22J00L"
+			(at 130.556 103.632 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "LCSC" "C21202145"
-			(at 138.684 105.918 0)
+		(property "LCSC" "C337958"
+			(at 130.556 105.918 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(pin "2"
@@ -5292,6 +5228,126 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:ESD131-B1-W0201")
+		(at 81.28 140.97 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c6699a7c-b1f9-491a-b6ee-fabdd048be67")
+		(property "Reference" "D303"
+			(at 83.82 139.6999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "ESD131-B1-W0201"
+			(at 83.82 142.2399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Diode_SMD:Infineon_SG-WLL-2-3_0.58x0.28_P0.36mm"
+			(at 81.28 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-ESD131-B1-W0201-DataSheet-v02_00-EN.pdf?fileId=5546d4625cc9456a015ce94850964889"
+			(at 81.28 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional ESD protection diode, ±5.5Vrwm, 0.23pF, SG-WLL-2-3"
+			(at 81.28 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2939949"
+			(at 83.82 144.526 90)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "2"
+			(uuid "94ef5477-6dd6-4720-b2d2-40fa34d9ad3e")
+		)
+		(pin "1"
+			(uuid "b74bf5b3-64bb-4e4e-8d18-43fbb30fdb83")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
+					(reference "D1003")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
+					(reference "D603")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
+					(reference "D503")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
+					(reference "D803")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
+					(reference "D303")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
+					(reference "D403")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
+					(reference "D703")
+					(unit 1)
+				)
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
+					(reference "D903")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "RF_Amplifier:PGA-103")
 		(at 114.3 115.57 0)
 		(unit 1)
@@ -5301,7 +5357,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d15fcf0e-b3a3-4043-a700-cf61be5cc854")
 		(property "Reference" "U302"
 			(at 114.3 105.41 0)
@@ -5313,7 +5368,7 @@
 				)
 			)
 		)
-		(property "Value" "PGA-103"
+		(property "Value" "PGA-103+"
 			(at 114.3 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5349,6 +5404,16 @@
 			(at 114.3 115.57 0)
 			(hide yes)
 			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C3008207"
+			(at 119.38 110.49 0)
+			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5411,7 +5476,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e06589c2-f8e0-4983-b040-f3844d03f39b")
 		(property "Reference" "D302"
@@ -5524,117 +5589,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:BAV99")
-		(at 81.28 138.43 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "e0b562b7-434c-4f80-907f-bdbf976c3fed")
-		(property "Reference" "D301"
-			(at 81.28 142.24 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BAV99"
-			(at 81.28 144.78 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
-			(at 81.28 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "BAV99 High-speed switching diodes, SOT-23"
-			(at 81.28 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e1746e8b-f50e-40ca-937b-396ee722d11f")
-		)
-		(pin "2"
-			(uuid "7f507251-89ac-4c62-ac96-9ceed2de4ae0")
-		)
-		(pin "3"
-			(uuid "7638e76a-c967-404d-9f66-fa00c26fcdcf")
-		)
-		(instances
-			(project "Antenna-Array-Switch-PCB"
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/6e88796b-cf86-4884-b4be-d1df3ead2331"
-					(reference "D1001")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/84b619c0-60cc-4043-91fe-88079e3abd03"
-					(reference "D601")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/872b3e63-a37e-49b3-8d67-29eb300db3b2"
-					(reference "D501")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/89709504-9a74-4a41-97e7-0f367d9e3ee3"
-					(reference "D801")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/a3b68118-00d6-43dd-924e-52a6fbdf55d7"
-					(reference "D301")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/b56fce60-6d4e-44ca-8002-6e4783aa0201"
-					(reference "D401")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/c35016c6-f47e-4f5f-a530-4d4cfbd0a9bb"
-					(reference "D701")
-					(unit 1)
-				)
-				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68/d3956d70-3b12-4dac-921d-ac4255b10b80"
-					(reference "D901")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 95.25 115.57 90)
 		(unit 1)
@@ -5644,7 +5598,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e5f3a66c-abb5-44f7-9274-f3477536bbe5")
 		(property "Reference" "C301"
 			(at 95.25 107.95 90)
@@ -5691,6 +5644,16 @@
 		(property "Description" "Unpolarized capacitor"
 			(at 95.25 115.57 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77026"
+			(at 94.996 119.38 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

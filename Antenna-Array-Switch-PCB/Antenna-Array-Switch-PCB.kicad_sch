@@ -1952,16 +1952,6 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 41.91) (xy 242.57 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d1f71a7-ebf5-45a2-bf5b-17d26d2772ce")
-	)
-	(wire
-		(pts
 			(xy 242.57 147.32) (xy 240.03 147.32)
 		)
 		(stroke
@@ -2059,16 +2049,6 @@
 			(type default)
 		)
 		(uuid "54ce71c9-6eaf-493a-813d-08908890d8bb")
-	)
-	(wire
-		(pts
-			(xy 234.95 41.91) (xy 234.95 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "608cd91c-9c63-494f-af15-ce454349fb9f")
 	)
 	(wire
 		(pts
@@ -2272,6 +2252,16 @@
 	)
 	(wire
 		(pts
+			(xy 245.11 45.72) (xy 247.65 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96cbb62b-9b98-41ff-be5c-012e61deb820")
+	)
+	(wire
+		(pts
 			(xy 185.42 45.72) (xy 207.01 45.72)
 		)
 		(stroke
@@ -2412,7 +2402,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 45.72) (xy 227.33 45.72)
+			(xy 227.33 45.72) (xy 237.49 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2562,7 +2552,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 48.26) (xy 247.65 46.99)
+			(xy 252.73 52.07) (xy 252.73 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4058,6 +4048,16 @@
 				)
 			)
 		)
+		(property "LCSC" "C14858"
+			(at 246.38 71.882 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0123822a-5be3-4a7e-8a9b-56a6342bb648")
 		)
@@ -4296,6 +4296,16 @@
 				)
 			)
 		)
+		(property "LCSC" "C14858"
+			(at 242.824 99.822 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "93903dc1-646a-41fa-aa36-e5df54d5a0fc")
 		)
@@ -4386,6 +4396,98 @@
 			(project "Antenna-Array-Switch-PCB"
 				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
 					(reference "H103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 241.3 45.72 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3b793020-bfe7-4279-9aff-dc23106e76bd")
+		(property "Reference" "C112"
+			(at 238.76 37.3379 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100pF"
+			(at 238.76 39.8779 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 237.49 44.7548 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 241.3 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14858"
+			(at 245.618 41.91 90)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "889efb54-643b-474c-9cf7-30da88fd8e24")
+		)
+		(pin "2"
+			(uuid "5510c1e1-fd45-41be-83a4-7ace21973363")
+		)
+		(instances
+			(project "Antenna-Array-Switch-PCB"
+				(path "/53a2d682-f221-4d2b-9002-0fe959bb1f68"
+					(reference "C112")
 					(unit 1)
 				)
 			)
@@ -5192,7 +5294,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDA")
-		(at 247.65 48.26 0)
+		(at 252.73 52.07 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5202,7 +5304,7 @@
 		(dnp no)
 		(uuid "8f1247d1-1506-4e47-b678-a37e020aae4e")
 		(property "Reference" "#PWR0111"
-			(at 247.65 54.61 0)
+			(at 252.73 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5213,7 +5315,7 @@
 			)
 		)
 		(property "Value" "GNDA"
-			(at 248.158 52.578 0)
+			(at 253.238 56.388 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5223,7 +5325,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 247.65 48.26 0)
+			(at 252.73 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5234,7 +5336,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 48.26 0)
+			(at 252.73 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5245,7 +5347,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 247.65 48.26 0)
+			(at 252.73 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5405,6 +5507,16 @@
 			(at 228.6 118.11 0)
 			(hide yes)
 			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14858"
+			(at 239.268 121.666 0)
+			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6390,7 +6502,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
-		(at 247.65 41.91 0)
+		(at 252.73 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6400,7 +6512,7 @@
 		(dnp no)
 		(uuid "c722f218-679c-44bb-8ae1-972582be1756")
 		(property "Reference" "J103"
-			(at 250.444 40.386 0)
+			(at 255.524 44.196 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6411,7 +6523,7 @@
 			)
 		)
 		(property "Value" "Conn_SMA"
-			(at 250.444 42.6329 0)
+			(at 255.524 46.4429 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6422,7 +6534,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
-			(at 247.65 41.91 0)
+			(at 252.73 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6433,7 +6545,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 41.91 0)
+			(at 252.73 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6444,7 +6556,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 247.65 41.91 0)
+			(at 252.73 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

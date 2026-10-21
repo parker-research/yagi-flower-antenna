@@ -82,7 +82,7 @@ The following are common LNA chips:
 
 #### Choice
 
-**QPL9547**
+**PGA-103+** - Low-cost, so we can put all the LNAs before the RF switch, decreasing noise.
 
 
 ## Topology and Others

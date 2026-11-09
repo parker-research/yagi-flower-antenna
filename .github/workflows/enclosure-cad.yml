@@ -1,0 +1,48 @@
+name: Enclosure CAD
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: enclosure
+
+jobs:
+  lint-and-build:
+    name: Lint, Type Check, and Build CAD
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.2.0
+
+      - name: Install dependencies
+        run: uv sync --dev --locked
+
+      - name: Run ruff linter
+        run: uv run ruff check ./cad/
+
+      - name: Run pyright
+        run: uv run pyright ./cad/
+
+      - name: Run Python scripts in CAD folder
+        run: |
+          find cad/ -name "*.py" ! -path "*/no_ci/*" | while read file; do
+            echo "Running $file"
+            uv run python "$file"
+          done
+
+      - name: Upload CAD build products
+        uses: actions/upload-artifact@v7
+        with:
+          name: enclosure-cad-${{ github.sha }}
+          path: enclosure/build/
+          retention-days: 30

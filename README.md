@@ -17,6 +17,7 @@ In development. Expected completion: 2026-12-01.
     - SP8T RF switch IC (SKY13418)
     - LNAs between each antenna port and the RF switch
     - SMA ports to each antenna + common
+    - 3D-printed enclosure (see [`enclosure/`](enclosure/README.md))
 4. Firmware for PCB microcontroller, masquerading as an antenna rotator (see [`firmware/`](firmware/README.md))
 5. Cables to each antenna
 

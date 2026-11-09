@@ -25,7 +25,7 @@ Stack-up, bottom to top: tray, PCB, spacers, lid. Five M3×12 screws go down thr
 
 Edit the `Spec` defaults in `cad/enclosure.py`.
 
-- **`populated_ports`**: The SMA jacks that are fitted, by PCB silkscreen name: `IN0`..`IN7`, `OUT0`, `SW_OUT`, `TEST_A`, `TEST_B`. The default is `IN0`, `OUT0`, `IN2`, `SW_OUT`. The lid gets a hole for each one, with an engraved label directly south of it and a line to the port's LED (inputs only). Every other port position stays solid.
+- **`populated_ports`**: The SMA jacks that are fitted, by PCB silkscreen name: `IN0`..`IN7`, `OUT0`, `SW_OUT`, `TEST_A`, `TEST_B`. The default is `IN0`, `OUT0`, `IN2`, `IN4`, `SW_OUT`. The lid gets a hole for each one, with an engraved label directly south of it and a line to the port's LED (inputs only). Every other port position stays solid.
 - **`label_closed_ports`**: Engrave closed input ports' names beside their LED instead (on by default). Closed ports without an LED (`OUT0`, `SW_OUT`, `TEST_*`) stay unlabelled.
 - **`sma_body_height`**, **`sma_body_size`**: Estimates for the Amphenol 901-144's square body. **Measure one before printing.** If the body reaches the lid, it is pocketed from underneath.
 - **`socket_height`**, **`header_spacer_height`**, **`rp2040_zero_pcb_thickness`**: The RP2040-Zero stack-up, which sets the USB-C cutout height. Defaults: 8.5 mm female sockets, 2.5 mm male header plastic, 1.0 mm module PCB.

@@ -36,7 +36,7 @@ class Spec:
 
     # Ports with an SMA jack fitted, by PCB silkscreen name. See
     # `pcb_layout.RF_PORTS` for all names.
-    populated_ports: tuple[str, ...] = ("IN0", "OUT0", "IN2", "SW_OUT")
+    populated_ports: tuple[str, ...] = ("IN0", "OUT0", "IN2", "IN4", "SW_OUT")
     # Engrave closed ports' names beside their LED (ports with no LED of
     # their own stay unlabelled when closed).
     label_closed_ports: bool = True

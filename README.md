@@ -12,12 +12,12 @@ In development. Expected completion: 2026-12-01.
 
 1. Antennas (6x yagi antennas, approx. 7 dBi each)
 2. Structural mount for antennas
-3. SP6T RF switch PCB
+3. SP8T RF switch PCB
     - Microcontroller
-    - SP6T or SP8T RF switch IC
+    - SP8T RF switch IC (SKY13418)
     - LNAs between each antenna port and the RF switch
     - SMA ports to each antenna + common
-4. Firmware for PCB microcontroller, masquerading as an antenna rotator
+4. Firmware for PCB microcontroller, masquerading as an antenna rotator (see [`firmware/`](firmware/README.md))
 5. Cables to each antenna
 
 ## Why?

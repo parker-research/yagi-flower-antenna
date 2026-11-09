@@ -98,6 +98,19 @@ Cross-file symbols are prefixed with their file name (`rf_switch_select()`, `ant
 | `command_line.*`   | Serial line input and human commands            |
 | `log.*`            | Logging                                         |
 
+## Unit Tests
+
+The hardware-independent modules (`antenna_select.c`, `rotator.c`) have host-side tests in `tests/`. They use the native compiler, not the Pico SDK, and run in CI:
+
+```bash
+cd firmware
+cmake -S tests -B tests/build
+cmake --build tests/build
+ctest --test-dir tests/build --output-on-failure
+```
+
+The tests use their own fixed antenna table, so editing `antenna_config.c` will not break them.
+
 ## IDE Support
 
 After building, enable IDE support by creating a symbolic link to `compile_commands.json` in the build directory:

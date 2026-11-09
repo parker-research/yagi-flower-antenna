@@ -84,11 +84,13 @@ class Spec:
     usb_cutout_width: float = 12.5
     usb_cutout_height: float = 7.5
 
-    # Amphenol 901-144 vertical SMA jack. Body size/height are estimates:
-    # check with calipers before printing.
+    # Amphenol 901-144 vertical SMA jack. Body size is an estimate.
     sma_thread_hole_diameter: float = 6.8  # 1/4"-36 thread.
     sma_body_size: float = 6.35
-    sma_body_height: float = 4.6  # Above the PCB top surface.
+    # Measured: 2 mm above the PCB top surface. The square body is only
+    # pocketed into the lid if it (plus clearance) reaches the lid, which it
+    # doesn't at this height (lid is `clearance_above_pcb` up).
+    sma_body_height: float = 2.0
     sma_body_clearance: float = 0.4  # Per side.
 
     led_hole_diameter: float = 1.2

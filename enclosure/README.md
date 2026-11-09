@@ -27,7 +27,7 @@ Edit the `Spec` defaults in `cad/enclosure.py`.
 
 - **`populated_ports`**: The SMA jacks that are fitted, by PCB silkscreen name: `IN0`..`IN7`, `OUT0`, `SW_OUT`, `TEST_A`, `TEST_B`. The default is `IN0`..`IN4`, `OUT0`, `SW_OUT`. The lid gets a hole for each one, with an engraved label directly south of it and a line to the port's LED (inputs only). Every other port position stays solid.
 - **`label_closed_ports`**: Engrave closed input ports' names beside their LED instead (on by default). Closed ports without an LED (`OUT0`, `SW_OUT`, `TEST_*`) stay unlabelled.
-- **`sma_body_height`**, **`sma_body_size`**: Estimates for the Amphenol 901-144's square body. **Measure one before printing.** If the body reaches the lid, it is pocketed from underneath.
+- **`sma_body_height`**, **`sma_body_size`**: The Amphenol 901-144's square body. The height is measured at 2 mm, which (plus `sma_body_clearance`) stays under the lid, so there are no square pockets. If a taller body would reach the lid, it gets pocketed from underneath, and the labels move to clear the pocket.
 - **`usb_receptacle_bottom_height`**, **`usb_receptacle_height_tolerance`**: Measured height of the RP2040-Zero's USB-C receptacle bottom above the main PCB (11.73 ± 0.3 mm), which sets the USB-C cutout height. The 7.5 mm cutout fits a 6.5 mm plug overmold (`usb_plug_overmold_height`) anywhere in that tolerance; the build fails if it wouldn't.
 - **`tall_region_height`**: Height the RF can and RP2040-Zero need above the PCB (20 mm).
 - **`clearance_below_pcb`**, **`clearance_above_pcb`**: Air gaps under and over the PCB (3.8 mm each).

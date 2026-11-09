@@ -60,6 +60,7 @@ RF_PORTS: dict[str, RfPort] = {
 }
 
 # M3 mounting holes (H101..H105).
+MOUNTING_HOLE_DIAMETER = 3.2
 MOUNTING_HOLES: list[tuple[float, float]] = [
     (194.0, 54.0),
     (194.0, 144.0),

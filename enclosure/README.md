@@ -14,12 +14,12 @@ uv run python cad/enclosure.py   # Writes STL + STEP files to build/
 
 | File                     | Print | Notes                                                                    |
 |--------------------------|-------|--------------------------------------------------------------------------|
-| `enclosure_tray.stl`     | 1     | Floor down. Standoffs take M3 heat-set inserts (4.0 mm hole, 5 mm deep). |
+| `enclosure_tray.stl`     | 1     | Floor down. Press an M3 nut into the hex pocket under each standoff.     |
 | `enclosure_lid.stl`      | 1     | Top plate down. The raised pocket's ceiling is a ~33 mm bridge.          |
 | `enclosure_spacers.stl`  | 1 set | Five 3.8 mm tubes that sit between the PCB and the lid.                  |
 | `enclosure_assembly.*`   | -     | Fit check only: tray, a rough PCB, spacers, and lid in place, each named and coloured. |
 
-Stack-up, bottom to top: tray, PCB, spacers, lid. Five M3 screws go down through the lid, spacers, and PCB into the inserts. They need about 12 mm of thread.
+Stack-up, bottom to top: tray, PCB, spacers, lid. Five M3×12 screws go down through the lid, spacers, PCB, and standoffs into M3 nuts sunk into the bottom of the tray (hex pockets, 3 mm deep, so the nuts sit flush or recessed). The build checks that `screw_length` reaches far enough into the nut and doesn't poke out the bottom.
 
 ## Configuration
 

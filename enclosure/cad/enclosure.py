@@ -1,7 +1,8 @@
 """3D-printable enclosure for the Antenna-Array-Switch-PCB.
 
 Parts:
-    - `tray`: Bottom. PCB sits on standoffs with M3 heat-set inserts.
+    - `tray`: Bottom. PCB sits on standoffs, with M3 nuts pressed into
+        hex pockets from underneath.
     - `lid`: Top plate with SMA holes, LED windows, and port labels (south
         of each SMA hole, with a line to the port's LED). Has a
         raised pocket over the RF can / socketed RP2040-Zero, with a USB-C
@@ -9,7 +10,7 @@ Parts:
     - `spacers`: Tubes between the PCB top and the lid (print one set).
 
 Assembly (bottom to top): tray -> PCB -> spacers -> lid. M3 screws go down
-through the lid, spacers, and PCB into the tray's heat-set inserts.
+through the lid, spacers, PCB, and standoffs into the nuts.
 
 Configure which RF connectors are populated with `Spec.populated_ports`.
 Unpopulated ports are closed (solid lid), and labelled beside their LED.
@@ -91,9 +92,16 @@ class Spec:
     # M3 hardware.
     screw_clearance_diameter: float = 3.4
     spacer_outer_diameter: float = 6.5  # Must fit on the 6.9 mm pad.
-    standoff_outer_diameter: float = 7.5
-    heat_set_insert_diameter: float = 4.0
-    heat_set_insert_depth: float = 5.0
+    # Wide enough to wall in the nut pocket where it rises above the floor.
+    standoff_outer_diameter: float = 8.8
+    screw_length: float = 12.0  # Under the head (pan/socket head).
+    nut_width_across_flats: float = 5.5
+    nut_thickness: float = 2.4
+    nut_clearance: float = 0.3  # Added across the flats, for a press fit.
+    # From the tray's underside. Deeper than the nut, so the nut sits up
+    # where the screw reaches it, and the underside stays flat.
+    nut_pocket_depth: float = 3.0
+    min_thread_engagement: float = 1.5
 
     def __post_init__(self) -> None:
         """Post initialization checks."""
@@ -104,9 +112,20 @@ class Spec:
             self.tall_region_wall_thickness, self.lid_thickness
         ), "Raised pocket's top edge rounding would break into it."
 
-        assert self.heat_set_insert_depth < (
-            self.clearance_below_pcb + self.floor_thickness
-        ), "Heat-set insert hole would pierce the tray floor."
+        screw_tip_z = self.lid_top_z - self.screw_length
+        assert screw_tip_z > 0, "Screw would stick out under the tray."
+        engagement = self.nut_pocket_depth - max(
+            screw_tip_z, self.nut_pocket_depth - self.nut_thickness
+        )
+        assert engagement >= self.min_thread_engagement, (
+            f"Screw only reaches {engagement:.1f} mm into the nut."
+        )
+        assert self.nut_pocket_depth < self.pcb_bottom_z - 1, (
+            "Nut pocket leaves too little standoff above it."
+        )
+        assert (
+            self.standoff_outer_diameter / 2 - self.nut_pocket_radius >= 1
+        ), "Standoff wall around the nut pocket is under 1 mm."
 
         usb_bottom = self.usb_center_z - self.usb_cutout_height / 2
         usb_top = self.usb_center_z + self.usb_cutout_height / 2
@@ -114,6 +133,12 @@ class Spec:
         assert usb_top < self.tall_region_ceiling_z, (
             "USB cutout hits the raised pocket's ceiling."
         )
+
+    @property
+    def nut_pocket_radius(self) -> float:
+        """Circumradius (centre to corner) of the hex nut pocket."""
+        flats = self.nut_width_across_flats + self.nut_clearance
+        return flats / 2 / math.cos(math.radians(30))
 
     # Z levels (tray floor underside at z=0).
     @property
@@ -233,11 +258,16 @@ def tray(spec: Spec) -> bd.Part | bd.Compound:
             spec.clearance_below_pcb + EPS,
             align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
         ).moved(bd.Location((x, y, spec.floor_thickness - EPS)))
-        p -= bd.Cylinder(
-            spec.heat_set_insert_diameter / 2,
-            spec.heat_set_insert_depth + EPS,
-            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MAX),
-        ).moved(bd.Location((x, y, spec.pcb_bottom_z + EPS)))
+        # Screw hole all the way through, and the nut pocket from below.
+        p -= bd.Pos(x, y, -EPS) * bd.Cylinder(
+            spec.screw_clearance_diameter / 2,
+            spec.pcb_bottom_z + 2 * EPS,
+            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+        )
+        hexagon = bd.RegularPolygon(spec.nut_pocket_radius, 6)
+        p -= bd.Pos(x, y, -EPS) * bd.extrude(
+            hexagon, amount=spec.nut_pocket_depth + EPS
+        )
 
     assert isinstance(p, bd.Part | bd.Compound)
     return p
@@ -521,16 +551,22 @@ def spacers(spec: Spec) -> bd.Part | bd.Compound:
     p = bd.Part(None)
     pitch = spec.spacer_outer_diameter + 3
     for i in range(len(pcb.MOUNTING_HOLES)):
-        tube = bd.Cylinder(
-            spec.spacer_outer_diameter / 2,
-            spec.clearance_above_pcb,
-            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
-        ) - bd.Cylinder(
-            spec.screw_clearance_diameter / 2,
-            spec.clearance_above_pcb * 3,
-        )
-        p += bd.Pos(i * pitch, 0, 0) * tube
+        p += bd.Pos(i * pitch, 0, 0) * spacer_tube(spec)
     return p
+
+
+def spacer_tube(spec: Spec) -> bd.Part:
+    """One PCB-to-lid spacer, standing on z=0."""
+    tube = bd.Cylinder(
+        spec.spacer_outer_diameter / 2,
+        spec.clearance_above_pcb,
+        align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+    ) - bd.Cylinder(
+        spec.screw_clearance_diameter / 2,
+        spec.clearance_above_pcb * 3,
+    )
+    assert isinstance(tube, bd.Part)
+    return tube
 
 
 def pcb_placeholder(spec: Spec) -> bd.Part | bd.Compound:
@@ -548,6 +584,12 @@ def pcb_placeholder(spec: Spec) -> bd.Part | bd.Compound:
         (x0, y0, spec.pcb_top_z),
         (x1, y1, spec.pcb_top_z + spec.tall_region_height),
     )
+    for x, y in mounting_hole_positions():
+        p -= bd.Pos(x, y, spec.pcb_bottom_z - EPS) * bd.Cylinder(
+            pcb.MOUNTING_HOLE_DIAMETER / 2,
+            pcb.PCB_THICKNESS + 2 * EPS,
+            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+        )
     return p
 
 
@@ -562,12 +604,7 @@ def assembly(spec: Spec) -> bd.Compound:
 
     spacer_set = [
         named(
-            bd.Pos(x, y, spec.pcb_top_z)
-            * bd.Cylinder(
-                spec.spacer_outer_diameter / 2,
-                spec.clearance_above_pcb,
-                align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
-            ),
+            bd.Pos(x, y, spec.pcb_top_z) * spacer_tube(spec),
             f"spacer_{i}",
             "gold",
         )

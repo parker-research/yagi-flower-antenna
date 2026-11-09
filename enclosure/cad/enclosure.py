@@ -2,7 +2,8 @@
 
 Parts:
     - `tray`: Bottom. PCB sits on standoffs with M3 heat-set inserts.
-    - `lid`: Top plate with SMA holes, LED windows, and port labels. Has a
+    - `lid`: Top plate with SMA holes, LED windows, and port labels (south
+        of each SMA hole, with a line to the port's LED). Has a
         raised pocket over the RF can / socketed RP2040-Zero, with a USB-C
         cutout in its wall.
     - `spacers`: Tubes between the PCB top and the lid (print one set).
@@ -11,7 +12,7 @@ Assembly (bottom to top): tray -> PCB -> spacers -> lid. M3 screws go down
 through the lid, spacers, and PCB into the tray's heat-set inserts.
 
 Configure which RF connectors are populated with `Spec.populated_ports`.
-Unpopulated ports are closed (solid lid, no label).
+Unpopulated ports are closed (solid lid), and labelled beside their LED.
 """
 
 import math
@@ -35,7 +36,9 @@ class Spec:
     # Ports with an SMA jack fitted, by PCB silkscreen name. See
     # `pcb_layout.RF_PORTS` for all names.
     populated_ports: tuple[str, ...] = ("IN0", "OUT0", "IN2", "SW_OUT")
-    label_closed_ports: bool = False
+    # Engrave closed ports' names beside their LED (ports with no LED of
+    # their own stay unlabelled when closed).
+    label_closed_ports: bool = True
 
     # Shell.
     pcb_edge_clearance: float = 0.5
@@ -56,6 +59,10 @@ class Spec:
     # Pocket sides this close to the outer wall are merged into it (so the
     # USB-C receptacle, which overhangs the can, reaches the outer wall).
     tall_region_snap_distance: float = 3.0
+    # Rounding of the raised pocket's outside: its free vertical corners,
+    # and the edges around its top (less than the wall thickness).
+    tall_region_corner_radius: float = 3.0
+    tall_region_top_edge_radius: float = 1.2
 
     # RP2040-Zero stack-up, for the USB-C cutout height.
     socket_height: float = 8.5  # Standard 2.54 mm female header.
@@ -77,7 +84,9 @@ class Spec:
 
     label_font_size: float = 3.5
     label_depth: float = 0.6
-    label_gap: float = 1.2  # From the SMA hole edge to the text.
+    label_gap: float = 1.2  # From the SMA hole/pocket or LED edge to text.
+    leader_line_width: float = 0.6  # Label-to-LED line, same depth.
+    leader_line_gap: float = 0.8  # Between the line ends and text/LED.
 
     # M3 hardware.
     screw_clearance_diameter: float = 3.4
@@ -90,6 +99,10 @@ class Spec:
         """Post initialization checks."""
         unknown = set(self.populated_ports) - set(pcb.RF_PORTS)
         assert not unknown, f"Unknown ports: {unknown}"
+
+        assert self.tall_region_top_edge_radius < min(
+            self.tall_region_wall_thickness, self.lid_thickness
+        ), "Raised pocket's top edge rounding would break into it."
 
         assert self.heat_set_insert_depth < (
             self.clearance_below_pcb + self.floor_thickness
@@ -252,6 +265,59 @@ def tall_region_bounds(spec: Spec) -> tuple[float, float, float, float]:
     )
 
 
+def tall_region_outside(spec: Spec) -> bd.Part:
+    """Outside of the raised pocket, with rounded corners and top edges."""
+    x0, y0, x1, y1 = tall_region_bounds(spec)
+    w = spec.tall_region_wall_thickness
+
+    # Sides snapped to the inner wall are extended flush with the outside.
+    def side(value: float, inner: float, outer: float) -> tuple[float, bool]:
+        if math.isclose(value, inner):
+            return outer, True
+        return value + math.copysign(w, inner), False
+
+    ox0, snap_x0 = side(x0, -spec.inner_half_x, -spec.outer_half_x)
+    oy0, snap_y0 = side(y0, -spec.inner_half_y, -spec.outer_half_y)
+    ox1, snap_x1 = side(x1, spec.inner_half_x, spec.outer_half_x)
+    oy1, snap_y1 = side(y1, spec.inner_half_y, spec.outer_half_y)
+
+    sketch = bd.Pos((ox0 + ox1) / 2, (oy0 + oy1) / 2) * bd.Rectangle(
+        ox1 - ox0, oy1 - oy0
+    )
+    # Round corners away from the outer wall, and corners of the enclosure
+    # itself (to match it). Corners where the pocket meets the wall stay
+    # square so the two sit flush.
+    corners: dict[tuple[float, float], tuple[bool, bool]] = {
+        (ox0, oy0): (snap_x0, snap_y0),
+        (ox1, oy0): (snap_x1, snap_y0),
+        (ox0, oy1): (snap_x0, snap_y1),
+        (ox1, oy1): (snap_x1, snap_y1),
+    }
+    for (cx, cy), (snap_a, snap_b) in corners.items():
+        if snap_a != snap_b:
+            continue
+        radius = (
+            spec.outer_corner_radius
+            if snap_a
+            else spec.tall_region_corner_radius
+        )
+        vertex = sketch.vertices().sort_by_distance(bd.Vector(cx, cy))[0]
+        rounded = bd.fillet(vertex, radius)
+        assert isinstance(rounded, bd.Sketch)
+        sketch = rounded
+
+    top_z = spec.tall_region_ceiling_z + spec.lid_thickness
+    p = bd.Pos(0, 0, spec.lid_bottom_z) * bd.extrude(
+        sketch, amount=top_z - spec.lid_bottom_z
+    )
+    p = bd.fillet(
+        p.faces().sort_by(bd.Axis.Z)[-1].edges(),
+        spec.tall_region_top_edge_radius,
+    )
+    assert isinstance(p, bd.Part)
+    return p
+
+
 def usb_cutout(spec: Spec) -> bd.Part:
     """USB-C cutout through the +Y wall of the raised pocket."""
     x, _ = pcb.kicad_to_cad(pcb.USB_CENTER_X, pcb.PCB_Y_MIN)
@@ -267,24 +333,111 @@ def usb_cutout(spec: Spec) -> bd.Part:
     )
 
 
-def label_center(
-    spec: Spec, name: str, text_size: tuple[float, float]
-) -> tuple[float, float]:
-    """Place a port label beside its connector, like the PCB silkscreen."""
-    port = pcb.RF_PORTS[name]
-    cx, cy = pcb.kicad_to_cad(port.connector_x, port.connector_y)
-    sx, sy = pcb.kicad_to_cad(port.silkscreen_x, port.silkscreen_y)
-    length = math.hypot(sx - cx, sy - cy)
-    ux, uy = (sx - cx) / length, (sy - cy) / length
-
-    # Distance from the connector centre to the text box edge along (ux, uy).
-    text_w, text_h = text_size
-    half_extent = min(
-        text_w / 2 / max(abs(ux), EPS), text_h / 2 / max(abs(uy), EPS)
+def sma_body_reaches_lid(spec: Spec) -> bool:
+    """Whether the SMA jack's square body is pocketed into the lid."""
+    body_top_z = (
+        spec.pcb_top_z + spec.sma_body_height + spec.sma_body_clearance
     )
-    distance = spec.sma_thread_hole_diameter / 2 + spec.label_gap
-    distance += half_extent
-    return (cx + ux * distance, cy + uy * distance)
+    return body_top_z > spec.lid_bottom_z
+
+
+def sma_south_extent(spec: Spec, port: pcb.RfPort) -> float:
+    """How far the SMA hole (or body pocket) reaches south of its centre."""
+    extent = spec.sma_thread_hole_diameter / 2
+    if sma_body_reaches_lid(spec):
+        # Support function of the rotated square in the -Y direction.
+        half = spec.sma_body_size / 2 + spec.sma_body_clearance
+        angle = math.radians(port.rotation_deg)
+        reach = half * (abs(math.cos(angle)) + abs(math.sin(angle)))
+        extent = max(extent, reach)
+    return extent
+
+
+@dataclass
+class Label:
+    """An engraved label, positioned on the lid (XY only)."""
+
+    text: bd.Sketch
+    center: tuple[float, float]  # Of the text's bounding box.
+    half_size: tuple[float, float]  # Of the text's bounding box.
+
+
+def label_below(spec: Spec, text: str, x: float, top_y: float) -> Label:
+    """Make a label, centred on x, with the top of its text at top_y."""
+    sketch = bd.Text(text, spec.label_font_size)
+    bbox = sketch.bounding_box()
+    dx, dy = x - bbox.center().X, top_y - bbox.max.Y
+    return Label(
+        text=bd.Pos(dx, dy) * sketch,
+        center=(x, top_y - bbox.size.Y / 2),
+        half_size=(bbox.size.X / 2, bbox.size.Y / 2),
+    )
+
+
+def label_fits(spec: Spec, label: Label) -> bool:
+    """Whether a label stays on the lid, clear of the outer edge."""
+    margin = spec.wall_thickness
+    (x, y), (hw, hh) = label.center, label.half_size
+    return (
+        abs(x) + hw < spec.outer_half_x - margin
+        and abs(y) + hh < spec.outer_half_y - margin
+    )
+
+
+def port_label(spec: Spec, name: str) -> Label:
+    """Label a populated port directly south of its SMA hole."""
+    port = pcb.RF_PORTS[name]
+    text = port.label or name
+    x, y = pcb.kicad_to_cad(port.connector_x, port.connector_y)
+    gap = sma_south_extent(spec, port) + spec.label_gap
+    label = label_below(spec, text, x, y - gap)
+    if label_fits(spec, label):
+        return label
+
+    # Too close to the -Y edge: put it directly north instead.
+    logger.warning(f"No room for the {name} label south of it; using north.")
+    _, hh = label.half_size
+    return label_below(spec, text, x, y + gap + 2 * hh)
+
+
+def led_label(spec: Spec, name: str) -> Label:
+    """Label a closed port directly south of its LED window."""
+    x, y = pcb.kicad_to_cad(*pcb.LEDS[pcb.PORT_LEDS[name]])
+    gap = spec.led_hole_diameter / 2 + spec.label_gap
+    return label_below(spec, pcb.RF_PORTS[name].label or name, x, y - gap)
+
+
+def leader_line(spec: Spec, label: Label, led: str) -> bd.Sketch:
+    """Line from the edge of a label's text to an LED window."""
+    lx, ly = pcb.kicad_to_cad(*pcb.LEDS[led])
+    cx, cy = label.center
+    length = math.hypot(lx - cx, ly - cy)
+    ux, uy = (lx - cx) / length, (ly - cy) / length
+
+    # Start where the ray from the label centre leaves the padded text box.
+    hw, hh = (h + spec.leader_line_gap for h in label.half_size)
+    start = min(hw / max(abs(ux), EPS), hh / max(abs(uy), EPS))
+    end = length - spec.led_hole_diameter / 2 - spec.leader_line_gap
+    assert end - start > spec.leader_line_width, (
+        f"Label too close to {led} for a leader line."
+    )
+
+    mid = (start + end) / 2
+    return bd.Pos(cx + ux * mid, cy + uy * mid) * bd.SlotCenterToCenter(
+        end - start,
+        spec.leader_line_width,
+        rotation=math.degrees(math.atan2(uy, ux)),
+    )
+
+
+def warn_engraving_clashes(spec: Spec, engravings: list[bd.Sketch]) -> None:
+    """Warn about labels or lines that run into an SMA hole or pocket."""
+    for name in spec.populated_ports:
+        port = pcb.RF_PORTS[name]
+        x, y = pcb.kicad_to_cad(port.connector_x, port.connector_y)
+        keep_out = bd.Pos(x, y) * bd.Circle(sma_south_extent(spec, port))
+        if any((sketch & keep_out).area > EPS for sketch in engravings):
+            logger.warning(f"An engraving runs into the {name} SMA hole.")
 
 
 def lid(spec: Spec) -> bd.Part | bd.Compound:
@@ -293,13 +446,7 @@ def lid(spec: Spec) -> bd.Part | bd.Compound:
 
     # Raised pocket over the RF can / RP2040-Zero.
     x0, y0, x1, y1 = tall_region_bounds(spec)
-    w = spec.tall_region_wall_thickness
-    pocket_top_z = spec.tall_region_ceiling_z + spec.lid_thickness
-    pocket = box_between(
-        (x0 - w, y0 - w, spec.lid_bottom_z), (x1 + w, y1 + w, pocket_top_z)
-    )
-    pocket &= outer_shell(spec, spec.lid_bottom_z, pocket_top_z)
-    p += pocket
+    p += tall_region_outside(spec)
     p -= box_between(
         (x0, y0, spec.lid_bottom_z - EPS), (x1, y1, spec.tall_region_ceiling_z)
     )
@@ -347,18 +494,23 @@ def lid(spec: Spec) -> bd.Part | bd.Compound:
                 )
             )
 
-    # Engraved port labels.
-    labelled = [
-        name
-        for name in pcb.RF_PORTS
-        if name in spec.populated_ports or spec.label_closed_ports
-    ]
-    for name in labelled:
-        text = bd.Text(pcb.RF_PORTS[name].label or name, spec.label_font_size)
-        size = text.bounding_box().size
-        x, y = label_center(spec, name, (size.X, size.Y))
-        p -= bd.Pos(x, y, spec.lid_top_z + EPS) * bd.extrude(
-            text, amount=-(spec.label_depth + EPS)
+    # Engraved port labels: south of the SMA hole, with a leader line to
+    # the port's LED. Closed ports are labelled at their LED instead.
+    engravings: list[bd.Sketch] = []
+    for name in pcb.RF_PORTS:
+        led = pcb.PORT_LEDS.get(name)
+        if name in spec.populated_ports:
+            label = port_label(spec, name)
+            engravings.append(label.text)
+            if led is not None:
+                engravings.append(leader_line(spec, label, led))
+        elif spec.label_closed_ports and led is not None:
+            engravings.append(led_label(spec, name).text)
+
+    warn_engraving_clashes(spec, engravings)
+    for sketch in engravings:
+        p -= bd.Pos(0, 0, spec.lid_top_z + EPS) * bd.extrude(
+            sketch, amount=-(spec.label_depth + EPS)
         )
 
     return p
@@ -401,17 +553,38 @@ def pcb_placeholder(spec: Spec) -> bd.Part | bd.Compound:
 
 def assembly(spec: Spec) -> bd.Compound:
     """Everything in its assembled position."""
+
+    def named(part: bd.Part | bd.Compound, label: str, color: str) -> bd.Part:
+        part = bd.Part(part.wrapped) if isinstance(part, bd.Compound) else part
+        part.label = label
+        part.color = bd.Color(color)
+        return part
+
     spacer_set = [
-        bd.Pos(x, y, spec.pcb_top_z)
-        * bd.Cylinder(
-            spec.spacer_outer_diameter / 2,
-            spec.clearance_above_pcb,
-            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+        named(
+            bd.Pos(x, y, spec.pcb_top_z)
+            * bd.Cylinder(
+                spec.spacer_outer_diameter / 2,
+                spec.clearance_above_pcb,
+                align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+            ),
+            f"spacer_{i}",
+            "gold",
         )
-        for x, y in mounting_hole_positions()
+        for i, (x, y) in enumerate(mounting_hole_positions(), start=1)
     ]
+    spacer_compound = bd.Compound(
+        label="enclosure_spacers",
+        children=spacer_set,
+    )
     return bd.Compound(
-        children=[tray(spec), pcb_placeholder(spec), *spacer_set, lid(spec)]
+        label="enclosure_assembly",
+        children=[
+            named(tray(spec), "tray", "dimgray"),
+            named(pcb_placeholder(spec), "pcb", "forestgreen"),
+            named(lid(spec), "lid", "steelblue"),
+            spacer_compound,
+        ],
     )
 
 
@@ -419,9 +592,9 @@ if __name__ == "__main__":
     spec = Spec()
     parts = {
         "enclosure_tray": tray(spec),
-        "enclosure_lid": show(lid(spec)),
+        "enclosure_lid": lid(spec),
         "enclosure_spacers": spacers(spec),
-        "enclosure_assembly": assembly(spec),
+        "enclosure_assembly": show(assembly(spec)),
     }
 
     logger.info("Showing CAD model(s)")

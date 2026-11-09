@@ -32,8 +32,8 @@ class RfPort:
     reference: str
     connector_x: float
     connector_y: float
-    # Where the PCB silkscreen label sits. The enclosure label is placed in
-    # the same direction from the connector.
+    # Where the PCB silkscreen label sits (not used by the enclosure, whose
+    # labels go directly south of the connector).
     silkscreen_x: float
     silkscreen_y: float
     # Footprint rotation (KiCad, CCW as seen from the top). Turns the
@@ -83,6 +83,19 @@ LEDS: dict[str, tuple[float, float]] = {
     "D802": (116.21, 120.77),
     "D902": (159.31, 132.15),
     "D1002": (135.57, 127.31),
+}
+
+# LED that indicates each port's state (the LNA-power LED of each input).
+# Ports not listed here have no LED of their own.
+PORT_LEDS: dict[str, str] = {
+    "IN0": "D302",
+    "IN1": "D402",
+    "IN2": "D502",
+    "IN3": "D602",
+    "IN4": "D702",
+    "IN5": "D802",
+    "IN6": "D902",
+    "IN7": "D1002",
 }
 
 # RF shield can J201 (Wuerth 36103305, 30x30 mm, centred at 116.75, 66.75),

@@ -36,7 +36,15 @@ class Spec:
 
     # Ports with an SMA jack fitted, by PCB silkscreen name. See
     # `pcb_layout.RF_PORTS` for all names.
-    populated_ports: tuple[str, ...] = ("IN0", "OUT0", "IN2", "IN4", "SW_OUT")
+    populated_ports: tuple[str, ...] = (
+        "IN0",
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "OUT0",
+        "SW_OUT",
+    )
     # Engrave closed ports' names beside their LED (ports with no LED of
     # their own stay unlabelled when closed).
     label_closed_ports: bool = True
@@ -65,14 +73,16 @@ class Spec:
     tall_region_corner_radius: float = 3.0
     tall_region_top_edge_radius: float = 1.2
 
-    # RP2040-Zero stack-up, for the USB-C cutout height.
-    socket_height: float = 8.5  # Standard 2.54 mm female header.
-    header_spacer_height: float = 2.5  # Male header plastic.
-    rp2040_zero_pcb_thickness: float = 1.0
+    # RP2040-Zero USB-C receptacle, socketed on the main PCB. Measured:
+    # its bottom is 11.73 +/- 0.3 mm above the main PCB's top surface.
+    usb_receptacle_bottom_height: float = 11.73
+    usb_receptacle_height_tolerance: float = 0.3
     usb_receptacle_height: float = 3.2
-    # Big enough for a typical USB-C plug overmold to pass through.
+    # Big enough for a typical USB-C plug overmold to pass through, at
+    # either end of the height tolerance.
+    usb_plug_overmold_height: float = 6.5
     usb_cutout_width: float = 12.5
-    usb_cutout_height: float = 7.0
+    usb_cutout_height: float = 7.5
 
     # Amphenol 901-144 vertical SMA jack. Body size/height are estimates:
     # check with calipers before printing.
@@ -133,6 +143,11 @@ class Spec:
         assert usb_top < self.tall_region_ceiling_z, (
             "USB cutout hits the raised pocket's ceiling."
         )
+        assert (
+            self.usb_cutout_height - self.usb_plug_overmold_height
+        ) / 2 >= self.usb_receptacle_height_tolerance, (
+            "USB plug overmold may not fit the cutout within tolerance."
+        )
 
     @property
     def nut_pocket_radius(self) -> float:
@@ -175,9 +190,7 @@ class Spec:
         """Z of the RP2040-Zero USB-C receptacle centre."""
         return (
             self.pcb_top_z
-            + self.socket_height
-            + self.header_spacer_height
-            + self.rp2040_zero_pcb_thickness
+            + self.usb_receptacle_bottom_height
             + self.usb_receptacle_height / 2
         )
 

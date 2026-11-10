@@ -95,7 +95,8 @@ class Spec:
 
     led_hole_diameter: float = 1.2
 
-    label_font_size: float = 3.5
+    label_font_size: float = 7.0
+    label_bold: bool = True  # Thicker strokes survive the print better.
     label_depth: float = 0.6
     label_gap: float = 1.2  # From the SMA hole/pocket or LED edge to text.
     leader_line_width: float = 0.6  # Label-to-LED line, same depth.
@@ -409,7 +410,13 @@ class Label:
 
 def label_below(spec: Spec, text: str, x: float, top_y: float) -> Label:
     """Make a label, centred on x, with the top of its text at top_y."""
-    sketch = bd.Text(text, spec.label_font_size)
+    sketch = bd.Text(
+        text,
+        spec.label_font_size,
+        font_style=bd.FontStyle.BOLD
+        if spec.label_bold
+        else bd.FontStyle.REGULAR,
+    )
     bbox = sketch.bounding_box()
     dx, dy = x - bbox.center().X, top_y - bbox.max.Y
     return Label(

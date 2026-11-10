@@ -3,14 +3,17 @@
 Parts (all stand on, and screw into, a plywood base):
     - `hub` (1x): Pentagonal block in the middle. A square socket on top
         holds the vertical (centre) yagi.
-    - `arm` (5x, identical): Bolts to one of the hub's flat sides and runs
-        outwards along the base to a ramp, sloped at the outer yagis'
+    - Arms (5x, identical): Each bolts to one of the hub's flat sides and
+        runs outwards along the base to a ramp, sloped at the outer yagis'
         elevation (40 degrees), that carries one outer yagi. Hollow and
-        open underneath.
+        open underneath. Split into as many pieces as it takes to fit the
+        printer (`Spec.printer_bed_size`), bolted end to end: extension
+        pieces, then the ramp piece.
 
-How far out the arms reach is worked out so the yagis' horizontal elements
-clear each other (see `Spec.min_element_clearance`), and every part must
-fit the printer (`Spec.printer_bed_size`).
+How far out the arms reach is set so the outer yagis' driven elements sit
+on a circle of `Spec.driven_element_radius_wavelengths` wavelengths. The
+build checks the yagis' horizontal elements clear each other (see
+`Spec.min_element_clearance`).
 
 Mounting (all M5, with captive nuts):
     - Outer yagis: The boom lies on top of the ramp, pointing outwards and
@@ -20,8 +23,9 @@ Mounting (all M5, with captive nuts):
     - Centre yagi: The boom stands in the socket. Two horizontal bolts go
         through the socket and the boom into hex nut pockets on the far
         side, aimed between the arms, so they can be any length.
-    - Arms to hub: Two horizontal bolts per arm, from inside the hub
-        (reached from underneath), into nut pockets inside the arm.
+    - Arm joints (hub to arm, and between arm pieces): Two horizontal bolts,
+        from inside the inner part (reached from underneath), into nut
+        pockets inside the outer part.
 
 Wood screws go down tubes from the top, seating near the bottom.
 
@@ -31,7 +35,7 @@ Z is up, with the base at z=0. Arm/yagi `k` points along azimuth
 
 import math
 from dataclasses import dataclass
-from functools import cached_property
+from itertools import pairwise
 from pathlib import Path
 
 import build123d as bd
@@ -66,11 +70,13 @@ class Spec:
     driven_element_length: float = 320.0
     driven_element_spacing: float = 155.0  # Reflector to driven element.
     element_diameter: float = 6.0  # Display only.
-    # The arms reach out until every element is at least this far from
-    # every other yagi's elements, and from the base.
-    min_element_clearance: float = 25.0
-    # For reporting the driven elements' spacing in wavelengths.
+    # Radius of the circle the outer yagis' driven elements (centres) sit
+    # on, in wavelengths at `design_frequency_mhz`. Sets the arm length.
+    driven_element_radius_wavelengths: float = 0.70
     design_frequency_mhz: float = 435.0
+    # Fail if any element is closer than this to another yagi's elements,
+    # or to the base.
+    min_element_clearance: float = 25.0
 
     # Printer. Every part must fit, standing as modelled.
     printer_bed_size: float = 210.0
@@ -85,7 +91,8 @@ class Spec:
     # Arms.
     arm_width: float = 46.0
     arm_side_wall_thickness: float = 4.0
-    arm_end_wall_thickness: float = 8.0  # Against the hub.
+    # At each joint (against the hub, and between pieces).
+    arm_end_wall_thickness: float = 8.0
     arm_outer_wall_thickness: float = 6.0  # Far end, under the ramp top.
     arm_top_thickness: float = 8.0  # Flat part, between hub and ramp.
     ramp_thickness: float = 8.0  # Perpendicular to the ramp.
@@ -105,7 +112,8 @@ class Spec:
     # underside (so the nut can go in straight), clear of the end wall.
     nut_access_length: float = 3.0
 
-    # Arm-to-hub bolts: two per arm, side by side, at half the hub height.
+    # Arm joint bolts (hub to arm, and between arm pieces): two per joint,
+    # side by side, at half the hub height.
     joint_bolt_spacing: float = 24.0
 
     # Centre socket, on top of the hub.
@@ -172,7 +180,19 @@ class Spec:
             assert gap >= 1, f"Hub screw at ({x:.1f}, {y:.1f}) hits socket."
 
         assert self.center_bolt_z[1] < self.socket_top_z
-        assert self.flat_screw_positions(), "Arm's flat part is too short."
+        # Every arm piece is long enough for its screws, and only the last
+        # one has any ramp.
+        for i in range(self.arm_piece_count):
+            assert self.flat_screw_positions(i), (
+                f"Arm piece {i + 1} is too short for its screws."
+            )
+        assert self.arm_split_radii[-2] < self.ramp_start_radius, (
+            "An arm joint falls on the ramp."
+        )
+        gap = element_clearance(self, self.ramp_start_radius)
+        assert gap >= self.min_element_clearance, (
+            f"Elements are only {gap:.0f} mm apart."
+        )
 
     @property
     def elevation_rad(self) -> float:
@@ -239,23 +259,28 @@ class Spec:
             - rear_bolt_rise
         )
 
-    @cached_property
+    @property
+    def wavelength(self) -> float:
+        """Wavelength at `design_frequency_mhz`, in mm."""
+        return 299_792.458 / self.design_frequency_mhz
+
+    @property
     def ramp_start_radius(self) -> float:
         """Distance from the axis to where each ramp starts.
 
-        As small as possible while the elements keep
-        `min_element_clearance`.
+        Puts the driven elements on their target circle.
         """
-        start = (
-            self.hub_apothem
-            + self.arm_end_wall_thickness
-            + self.screw_tower_diameter * 3
+        e = self.elevation_rad
+        along_boom = (
+            self.front_bolt_slant
+            + self.reflector_offset
+            + self.driven_element_spacing
         )
-        for r in range(math.ceil(start), 2000):
-            if element_clearance(self, r) >= self.min_element_clearance:
-                return r
-        msg = "No arm length gives the elements enough clearance."
-        raise ValueError(msg)
+        # Driven element centre, relative to the ramp start: along the
+        # ramp, then up off it to the boom's centreline.
+        run = along_boom * math.cos(e) - self.boom_width / 2 * math.sin(e)
+        target = self.driven_element_radius_wavelengths * self.wavelength
+        return target - run
 
     @property
     def ramp_underside_start_offset(self) -> float:
@@ -332,12 +357,28 @@ class Spec:
 
         return max((i / 2 for i in range(360)), key=clearance)
 
-    def flat_screw_positions(self) -> list[float]:
-        """Radii of the screws along each arm's flat part (centreline)."""
+    @property
+    def arm_piece_count(self) -> int:
+        """How many pieces each arm is split into, to fit the printer."""
+        return math.ceil(self.arm_length / self.printer_bed_size)
+
+    @property
+    def arm_split_radii(self) -> list[float]:
+        """Radii of each arm piece's ends, from the hub out (equal lengths)."""
+        n = self.arm_piece_count
+        step = self.arm_length / n
+        return [self.hub_apothem + i * step for i in range(n + 1)]
+
+    def flat_screw_positions(self, piece: int) -> list[float]:
+        """Radii of the screws along an arm piece's flat part (centreline)."""
         tower_r = self.screw_tower_diameter / 2
-        first = self.hub_apothem + self.arm_end_wall_thickness + 2 * tower_r
-        # Stay clear of the boom's rear end, which leans over the flat top.
-        last = self.ramp_start_radius - self.boom_width - tower_r
+        r0, r1 = self.arm_split_radii[piece], self.arm_split_radii[piece + 1]
+        first = r0 + self.arm_end_wall_thickness + 2 * tower_r
+        if piece == self.arm_piece_count - 1:
+            # Stay clear of the boom's rear end, leaning over the flat top.
+            last = self.ramp_start_radius - self.boom_width - tower_r
+        else:
+            last = r1 - self.arm_end_wall_thickness - 2 * tower_r
         if last < first:
             return []
         if last - first < 2 * self.screw_tower_diameter:
@@ -483,15 +524,17 @@ def hub_screw_positions(spec: Spec) -> list[tuple[float, float]]:
 
 
 def arm_screw_positions(spec: Spec) -> list[tuple[float, float]]:
-    """Wood screws through arm 0 (along +X)."""
+    """Wood screws through arm 0 (along +X), all pieces."""
     e = spec.elevation_rad
     mid_slant = (spec.rear_bolt_slant + spec.front_bolt_slant) / 2
     ramp_x = spec.ramp_start_radius + mid_slant * math.cos(e)
     off = spec.ramp_screw_offset
-    return [(x, 0.0) for x in spec.flat_screw_positions()] + [
-        (ramp_x, -off),
-        (ramp_x, off),
+    flat = [
+        (x, 0.0)
+        for piece in range(spec.arm_piece_count)
+        for x in spec.flat_screw_positions(piece)
     ]
+    return [*flat, (ramp_x, -off), (ramp_x, off)]
 
 
 def screw_cuts(
@@ -531,12 +574,12 @@ def screw_towers(
     ]
 
 
-def joint_bolt_locations(spec: Spec) -> list[bd.Location]:
-    """Arm 0's bolts to the hub. Local Z points outwards, along +X."""
+def joint_bolt_locations(spec: Spec, x: float = 0) -> list[bd.Location]:
+    """Arm 0's joint bolts, at x. Local Z points outwards, along +X."""
     z = spec.flat_height / 2
     half = spec.joint_bolt_spacing / 2
     return [
-        bd.Location((0, y, z)) * bd.Rot(0, 90, 0)  # Local Z -> X.
+        bd.Location((x, y, z)) * bd.Rot(0, 90, 0)  # Local Z -> X.
         for y in (-half, half)
     ]
 
@@ -620,35 +663,51 @@ def hub(spec: Spec) -> bd.Part | bd.Compound:
     return p
 
 
-def arm(spec: Spec) -> bd.Part | bd.Compound:
-    """Make arm 0 (along +X), in place. The others are rotated copies."""
+def arm_pieces(spec: Spec) -> list[bd.Part | bd.Compound]:
+    """Make arm 0's pieces (along +X), in place, from the hub out.
+
+    The other arms are rotated copies.
+    """
     a = spec.hub_apothem
     r0, r1 = spec.ramp_start_radius, spec.arm_end_radius
     h, top = spec.flat_height, spec.arm_top_z
     w = spec.arm_width
+    wall = spec.arm_end_wall_thickness
+    splits = spec.arm_split_radii
 
     envelope = side_profile([(a, 0), (r1, 0), (r1, top), (r0, h), (a, h)], w)
 
-    # Hollow inside, open underneath: under the flat top, then the ramp.
-    x0 = a + spec.arm_end_wall_thickness
-    x1 = r1 - spec.arm_outer_wall_thickness
+    # Hollow inside each piece, open underneath: under the flat top, then
+    # (last piece) the ramp. End walls at each joint.
+    inner_w = w - 2 * spec.arm_side_wall_thickness
     flat_under = h - spec.arm_top_thickness
-    ramp_under_start = r0 + spec.ramp_underside_start_offset
-    cavity = side_profile(
-        [
-            (x0, -1),
-            (x1, -1),
-            (x1, spec.ramp_underside_z_at(x1)),
-            (ramp_under_start, flat_under),
-            (x0, flat_under),
-        ],
-        w - 2 * spec.arm_side_wall_thickness,
-    )
+    cavities: bd.Part = bd.Part(None)
+    for i in range(spec.arm_piece_count):
+        x0 = splits[i] + wall
+        if i < spec.arm_piece_count - 1:
+            x1 = splits[i + 1] - wall
+            cavities += side_profile(
+                [(x0, -1), (x1, -1), (x1, flat_under), (x0, flat_under)],
+                inner_w,
+            )
+        else:
+            x1 = r1 - spec.arm_outer_wall_thickness
+            ramp_under_start = r0 + spec.ramp_underside_start_offset
+            cavities += side_profile(
+                [
+                    (x0, -1),
+                    (x1, -1),
+                    (x1, spec.ramp_underside_z_at(x1)),
+                    (ramp_under_start, flat_under),
+                    (x0, flat_under),
+                ],
+                inner_w,
+            )
     screws = arm_screw_positions(spec)
     supports: bd.Part = bd.Part(None)
     for tower in screw_towers(spec, screws, top + 1):
         supports += tower
-    p = envelope - (cavity - supports)
+    p = envelope - (cavities - supports)
 
     # Outer yagi bolts: the line is cut right through (ramp, and the end
     # wall if it reaches it), with nut pockets under the ramp.
@@ -659,21 +718,35 @@ def arm(spec: Spec) -> bd.Part | bd.Compound:
             spec, loc, t - spec.nut_pocket_depth, t + spec.nut_access_length
         )
 
-    # Hub bolts: through the end wall, nuts on its inside, tails free.
-    for loc in joint_bolt_locations(spec):
-        p -= cylinder_along(loc, spec.bolt_clearance_diameter, a - 1, x0 + 1)
-        p -= hex_along(spec, loc, x0 - spec.nut_pocket_depth, x0 + 3)
+    # Joints: bolts through both end walls, nuts on the inside of the
+    # outer piece, heads inside the inner piece (or the hub).
+    for x in splits[:-1]:
+        for loc in joint_bolt_locations(spec, x):
+            p -= cylinder_along(
+                loc, spec.bolt_clearance_diameter, -wall - 1, wall + 1
+            )
+            p -= hex_along(spec, loc, wall - spec.nut_pocket_depth, wall + 3)
 
     for cut in screw_cuts(spec, screws):
         p -= cut
 
-    assert isinstance(p, bd.Part | bd.Compound)
-    return p
+    pieces: list[bd.Part | bd.Compound] = []
+    for x0, x1 in pairwise(splits):
+        piece = p & bd.Pos(x0, 0, -1) * bd.Box(
+            x1 - x0,
+            w + 2,
+            top + 2,
+            align=(bd.Align.MIN, bd.Align.CENTER, bd.Align.MIN),
+        )
+        assert isinstance(piece, bd.Part | bd.Compound)
+        pieces.append(piece)
+    return pieces
 
 
-def arm_for_printing(spec: Spec) -> bd.Part | bd.Compound:
-    """Arm 0, moved so its hub end is at x=0 (still standing on z=0)."""
-    return bd.Pos(-spec.hub_apothem, 0, 0) * arm(spec)
+def arm_piece_names(spec: Spec) -> list[str]:
+    """Names of an arm's pieces, from the hub out."""
+    n = spec.arm_piece_count
+    return [f"arm_extension_{i + 1}" for i in range(n - 1)] + ["arm_ramp"]
 
 
 @dataclass
@@ -835,22 +908,21 @@ def boom_placeholders(spec: Spec) -> list[bd.Part]:
 def placed_parts(
     spec: Spec,
     hub_part: bd.Part | bd.Compound,
-    arm_part: bd.Part | bd.Compound,
+    pieces: list[bd.Part | bd.Compound],
 ) -> list[tuple[str, bd.Part | bd.Compound]]:
-    """Place the hub and every arm in their assembled positions."""
+    """Place the hub and every arm piece in their assembled positions."""
     parts: list[tuple[str, bd.Part | bd.Compound]] = [("hub", hub_part)]
     for k, azimuth in enumerate(spec.outer_azimuths_deg):
-        parts.append((f"arm_{k}", bd.Rot(0, 0, azimuth) * arm_part))
+        for name, piece in zip(arm_piece_names(spec), pieces, strict=True):
+            parts.append((f"{name}_{k}", bd.Rot(0, 0, azimuth) * piece))
     return parts
 
 
 def check_print_fit(
-    spec: Spec,
-    hub_part: bd.Part | bd.Compound,
-    arm_part: bd.Part | bd.Compound,
+    spec: Spec, parts: list[tuple[str, bd.Part | bd.Compound]]
 ) -> None:
     """Fail if a part doesn't fit the printer, standing as modelled."""
-    for name, part in (("hub", hub_part), ("arm", arm_part)):
+    for name, part in parts:
         size = part.bounding_box().size
         assert max(size.X, size.Y) <= spec.printer_bed_size, (
             f"The {name} is {size.X:.0f} x {size.Y:.0f} mm: too big to print."
@@ -914,11 +986,12 @@ def report(spec: Spec) -> None:
     logger.info(
         f"Frame: {2 * reach:.0f} mm across, {spec.arm_top_z:.0f} mm tall at "
         f"the arm ends ({spec.socket_top_z:.0f} mm at the socket). Arms "
-        f"are {spec.arm_length:.0f} mm long; ramps start "
-        f"{spec.ramp_start_radius:.0f} mm from the centre."
+        f"are {spec.arm_length:.0f} mm long, in {spec.arm_piece_count} "
+        f"pieces; ramps start {spec.ramp_start_radius:.0f} mm from the "
+        "centre."
     )
 
-    wavelength = 299_792.458 / spec.design_frequency_mhz  # mm
+    wavelength = spec.wavelength
     frames = yagi_frames(spec)
     outer = [yagi_elements(spec, y)[1] for y in frames[:-1]]
     centre = yagi_elements(spec, frames[-1])[1]
@@ -1006,17 +1079,22 @@ if __name__ == "__main__":
     report(spec)
 
     hub_part = hub(spec)
-    arm_part = arm(spec)
-    placed = placed_parts(spec, hub_part, arm_part)
-    check_print_fit(spec, hub_part, arm_part)
+    pieces = arm_pieces(spec)
+    placed = placed_parts(spec, hub_part, pieces)
+    check_print_fit(
+        spec,
+        [("hub", hub_part), *zip(arm_piece_names(spec), pieces, strict=True)],
+    )
     check_clearances(spec, placed)
     check_elements(spec, placed)
 
-    parts = {
-        "antenna_frame_hub": hub_part,
-        "antenna_frame_arm": arm_for_printing(spec),
-        "antenna_frame_assembly": show(assembly(spec, placed)),
-    }
+    parts: dict[str, bd.Part | bd.Compound] = {"antenna_frame_hub": hub_part}
+    for name, piece, x0 in zip(
+        arm_piece_names(spec), pieces, spec.arm_split_radii, strict=False
+    ):
+        # Moved so its inner end is at x=0 (still standing on z=0).
+        parts[f"antenna_frame_{name}"] = bd.Pos(-x0, 0, 0) * piece
+    parts["antenna_frame_assembly"] = show(assembly(spec, placed))
 
     (export_folder := Path(__file__).parent.with_name("build")).mkdir(
         exist_ok=True

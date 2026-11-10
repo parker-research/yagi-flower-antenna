@@ -18,32 +18,33 @@ uv run python cad/enclosure_3d_printed.py   # Likewise
 
 ## Antenna Frame
 
-A 3D-printed frame, in six parts, that stands on a plywood base and holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around it, pointing outwards at 40° above the horizon. The sixth stands in the middle, pointing straight up. All elements are horizontal.
+A 3D-printed frame, in 11 parts, that stands on a plywood base and holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around it, pointing outwards at 40° above the horizon. The sixth stands in the middle, pointing straight up. All elements are horizontal.
 
 | File                            | Print | Notes                                                              |
 |---------------------------------|-------|--------------------------------------------------------------------|
 | `antenna_frame_hub.stl`         | 1     | Base down. About 134 × 141 × 108 mm.                               |
-| `antenna_frame_arm.stl`         | 5     | Base down. About 165 × 46 × 89 mm. The ramp's underside overhangs 50° from vertical. |
+| `antenna_frame_arm_extension_1.stl` | 5 | Base down. About 134 × 46 × 35 mm. Inner piece of each arm, bolts to the hub. |
+| `antenna_frame_arm_ramp.stl`    | 5     | Base down. About 134 × 46 × 89 mm. Outer piece of each arm, carries a yagi. The ramp's underside overhangs 50° from vertical. |
 | `antenna_frame_assembly.*`      | -     | Fit check only: hub, arms, booms, reflectors, and driven elements in place. |
 
 ### Shape
 
 - **Hub**: A hollow pentagonal block, open underneath, with ribs and screw towers inside. A square socket on top holds the centre yagi.
-- **Arms**: Each one bolts to a flat side of the hub and runs outwards along the base, then rises as a ramp at 40°. The outer yagi's boom lies on top of the ramp. Hollow and open underneath.
+- **Arms**: Each one bolts to a flat side of the hub and runs outwards along the base, then rises as a ramp at 40°. The outer yagi's boom lies on top of the ramp. Hollow and open underneath. Each arm is split into equal pieces, as few as fit the printer (two with the defaults), bolted end to end: extension pieces, then the ramp piece.
 
-Every part stands directly on the plywood, so loads go straight down into it. The whole frame is about 450 mm across.
+Every part stands directly on the plywood, so loads go straight down into it. The whole frame is about 660 mm across.
 
-How far out the arms reach is worked out by the build. Each ramp starts just far enough out that every element stays at least `min_element_clearance` (25 mm) from every other yagi's elements and from the base. With the defaults, the ramps start 161 mm from the centre, and the outer driven elements sit on a circle of radius 379 mm (0.55 wavelengths at 435 MHz). The build logs these, and fails if a part won't fit the printer (`printer_bed_size`, `printer_max_height`).
+The arm length is set so the outer yagis' driven elements sit on a circle of `driven_element_radius_wavelengths` (0.70) wavelengths at `design_frequency_mhz` (435 MHz): a radius of 482 mm. The frame is then about 660 mm across, and every element is at least 125 mm from every other yagi's elements. The build fails if any element comes closer than `min_element_clearance` (25 mm), or if a part won't fit the printer (`printer_bed_size`, `printer_max_height`).
 
 ### Mounting
 
 Everything uses M5 bolts with M5 nuts pressed into hex pockets.
 
-- **Arms to hub**: Two horizontal bolts per arm, put in from inside the hub (from underneath), through the hub's side and the arm's end wall, into nuts on the inside of the arm (M5×25). Bolt the arms on before fixing the frame down.
+- **Arm joints** (hub to arm, and between arm pieces): Two horizontal bolts per joint, put in from inside the inner part (from underneath), through both end walls, into nuts on the inside of the outer part (M5×25). Bolt the arms together and onto the hub before fixing the frame down.
 - **Outer yagis**: Two bolts, 46 mm apart, go down through the boom and the ramp into nuts in pockets on the ramp's underside (press them in from below). The tails run down into the arm, and out through its end wall if they reach it. The hub and arms are high enough to leave `min_bolt_tail_length` (50 mm) under the nut before the lower bolts' tails reach the base, and about 90 mm for the upper ones.
 - **Centre yagi**: The boom stands in the socket. Two horizontal bolts go through the socket and the boom, into nuts on the far side of the socket, aimed between the arms, so they can be any length.
 
-Wood screws (e.g. #8 or M4) fix every part to the plywood base: five through the hub (between the arms), and four through each arm (two along the flat part, two either side of the boom on the ramp). Each one drops down a 10 mm bore in a solid tower and seats 6 mm above the base. The build checks that no boom blocks a bore.
+Wood screws (e.g. #8 or M4) fix every part to the plywood base: five through the hub (between the arms), and five through each arm (two along the extension piece, one on the ramp piece's flat part, and two either side of the boom on the ramp). Each one drops down a 10 mm bore in a solid tower and seats 6 mm above the base. The build checks that no boom blocks a bore.
 
 ### Configuration
 
@@ -53,7 +54,8 @@ Edit the `Spec` defaults in `cad/antenna_frame.py`.
 - **`boom_width`**, **`bolt_spacing`**: 15 mm booms, 46 mm between bolts.
 - **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt, down the ramp (15 mm).
 - **`reflector_length`**, **`reflector_offset`**, **`driven_element_length`**, **`driven_element_spacing`**: Yagi elements. The reflector (340 mm) is 75 mm forward of the front bolt, and the driven element (gamma match, so one continuous rod) is 155 mm further on. The driven element's length is a placeholder.
-- **`min_element_clearance`**: Sets how far out the arms reach (see [Shape](#shape)).
+- **`driven_element_radius_wavelengths`**, **`design_frequency_mhz`**: Set how far out the arms reach (see [Shape](#shape)).
+- **`min_element_clearance`**: The build fails if elements of different yagis come closer than this (25 mm).
 - **`printer_bed_size`**, **`printer_max_height`**: 210 mm.
 - **`hub_apothem`**: Hub size (60 mm, centre to each flat side).
 - **`min_bolt_tail_length`**: Sets the height of the hub and the arms' flat part.

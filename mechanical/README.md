@@ -4,7 +4,7 @@ CAD models for the yagi flower, written in [build123d](https://github.com/gumyr/
 
 | Script                         | What                                                           |
 |--------------------------------|----------------------------------------------------------------|
-| `cad/antenna_frame.py`         | [Antenna frame](#antenna-frame): the bowl that holds all 6 yagis. |
+| `cad/antenna_frame.py`         | [Antenna frame](#antenna-frame): holds all 6 yagis, on a plywood base. |
 | `cad/enclosure_3d_printed.py`  | [Enclosure (3D-printed)](#enclosure-3d-printed) for the Antenna-Array-Switch-PCB. |
 
 ## Build
@@ -18,38 +18,40 @@ uv run python cad/enclosure_3d_printed.py   # Likewise
 
 ## Antenna Frame
 
-A 3D-printed bowl, 210 mm across the rim, that holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around the outside, pointing outwards at 40° above the horizon. The sixth stands in a socket in the middle, pointing straight up.
+A 3D-printed cylinder, 210 mm across, that stands on a plywood base and holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around it, pointing outwards at 40° above the horizon. The sixth stands in a socket in the middle, pointing straight up.
 
 | File                            | Print | Notes                                                              |
 |---------------------------------|-------|--------------------------------------------------------------------|
-| `antenna_frame.stl`             | 1     | Floor down. The sloped faces' undersides overhang 50° from vertical. |
+| `antenna_frame.stl`             | 1     | Base down. The plate's underside overhangs 50° from vertical between the ribs. |
 | `antenna_frame_assembly.*`      | -     | Fit check only: the frame with a stub of each boom in place.       |
 
 ### Shape
 
-The lower part of the bowl is a pentagonal frustum standing on a short vertical skirt. Each of its five flat outer faces slopes at 40°, and an outer yagi's boom lies flat against the underside of one, pointing outwards and up. The rim is trimmed round, but each face is kept flat for 5 mm either side of its boom.
+A pentagonal dish is sunk into the top of the cylinder: a flat floor, and five flat faces sloping up at 40°. Each outer yagi's boom lies on top of one face and runs out over the rim. Each face is kept flat for 5 mm either side of its boom where the dish is trimmed round inside the rim.
+
+Under the dish, the frame is hollow and open at the bottom. The sloped plate is held up by the full-height outer wall, five radial ribs (between the yagis), and a column under the floor. All of them stand directly on the base, so loads go straight down into the plywood.
 
 ### Mounting
 
 Everything uses M5 bolts, two per yagi, 46 mm apart, with M5 nuts pressed into hex pockets in the frame.
 
-- **Outer yagis**: The bolts go up through the boom and the wall, into nuts on the inside of the bowl. The tails stick out into the open bowl. The build logs how much room they have before reaching the centre yagi (about 65 mm past the wall for the lower bolts, 120 mm for the upper ones). The skirt is tall enough that a bolt up to `bolt_insertion_length` (45 mm, including the head) can be fed in from under the boom.
-- **Centre yagi**: The boom stands in the square socket, on the floor. Two horizontal bolts go through the socket and the boom, into nuts on the far side of the socket. The bolt line runs through holes in the bowl wall on both sides (head-sized on the head side), aimed between the outer yagis, so these bolts can be any length.
+- **Outer yagis**: The bolts go down through the boom and the plate, into nuts in pockets on the plate's underside (press them in from below before fixing the frame down). The tails run outwards and down into the hollow, and through holes in the outer wall if they reach it. The dish sits high enough to leave `min_bolt_tail_length` (50 mm) under the nut before the lower bolts' tails reach the base, and about 90 mm for the upper bolts. Bolts are fed in from above the boom. The lower ones have 37 mm of room (bolt plus head) before the centre socket, which is enough for M5×30. The build warns if it drops under `min_bolt_feed_length`.
+- **Centre yagi**: The boom stands in the square socket, on the floor. Two horizontal bolts go through the socket and the boom, into nuts on the far side of the socket. The bolt line is cut right through the frame on both sides (head-sized on the head side), aimed between the outer yagis, so these bolts can be any length.
 
-Ten 4.5 mm holes in the floor take wood screws (e.g. #8 or M4) into a plywood base. Fit them before the antennas, since the bolt tails pass over them.
+Ten wood screws (e.g. #8 or M4) fix the frame to the plywood base, all between the yagis: five through the dish floor and five through the sloped plate. Each one drops down a 10 mm bore in a solid tower and seats 6 mm above the base. Fit them before the antennas.
 
 ### Configuration
 
-Edit the `Spec` defaults in `cad/antenna_frame.py`. The bowl's height and floor size are worked out from these.
+Edit the `Spec` defaults in `cad/antenna_frame.py`. The frame's height and the floor's size are worked out from these.
 
 - **`outer_antenna_count`**, **`outer_antenna_elevation_deg`**: Five outer yagis, at 40°.
 - **`rim_diameter`**: 210 mm.
 - **`boom_width`**, **`bolt_spacing`**: 15 mm booms, 46 mm between bolts.
-- **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt (15 mm). A longer overhang moves the bolts further up the face, making the bowl taller.
-- **`bolt_insertion_length`**: Sets the skirt height. See [Mounting](#mounting).
-- **`floor_hole_count`**, **`floor_hole_ring_diameter`**, **`floor_hole_diameter`**: Wood screw holes. The build checks the screw heads clear the wall and the socket.
+- **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt, down the face (15 mm). The bolts stay put, so a longer overhang makes the floor smaller and the frame taller.
+- **`min_bolt_tail_length`**: Sets how high the dish sits. See [Mounting](#mounting).
+- **`inner_screw_ring_diameter`**, **`outer_screw_ring_diameter`**, **`screw_hole_diameter`**: Wood screw positions and size.
 
-The build fails if the nut pockets would break out of a face, or if the centre yagi's bolt line would hit an outer boom.
+The build fails if a boom would hit the frame, the centre yagi's bolts, or a screw bore (so the screwdriver can reach every screw).
 
 ## Enclosure (3D-printed)
 

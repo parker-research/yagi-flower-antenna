@@ -102,6 +102,21 @@ class Spec:
     screw_seat_thickness: float = 6.0  # Under the head.
     screw_tower_diameter: float = 16.0
 
+    # Yagi elements (assembly view and spacing report). Measured along the
+    # boom, forwards from the front (outermost/upper) bolt.
+    reflector_length: float = 340.0
+    reflector_offset: float = 75.0  # Front bolt to reflector centre.
+    # Gamma-match: the driven element is one continuous rod, like the
+    # others. TODO: Measure its length; this is a placeholder.
+    driven_element_length: float = 320.0
+    driven_element_spacing: float = 155.0  # Reflector to driven element.
+    element_diameter: float = 6.0  # Display only.
+    # Elements' rotation about the boom. 0: square to the bolts (outer
+    # yagis' elements are horizontal). 90: parallel to the bolts.
+    element_roll_deg: float = 0.0
+    # For reporting the driven elements' spacing in wavelengths.
+    design_frequency_mhz: float = 435.0
+
     # Assembly view only.
     boom_display_length: float = 400.0
 
@@ -601,8 +616,10 @@ def frame(spec: Spec) -> bd.Part | bd.Compound:
 
 
 def boom_placeholders(spec: Spec) -> list[bd.Part]:
-    """Square booms in their mounted positions."""
+    """Square booms in their mounted positions, with their bolt holes."""
     w, length = spec.boom_width, spec.boom_display_length
+    d = spec.bolt_clearance_diameter
+    bolts = outer_bolt_locations(spec)
     booms: list[bd.Part] = []
     for azimuth in spec.outer_azimuths_deg:
         f = face_frame(spec, azimuth)
@@ -611,25 +628,169 @@ def boom_placeholders(spec: Spec) -> list[bd.Part]:
         loc = bd.Location(
             bd.Plane(origin=centre, x_dir=f.up_slope, z_dir=f.normal)
         )
-        booms.append(
-            loc
-            * bd.Box(
-                length,
-                w,
-                w,
-                align=(bd.Align.MIN, bd.Align.CENTER, bd.Align.CENTER),
+        boom = loc * bd.Box(
+            length,
+            w,
+            w,
+            align=(bd.Align.MIN, bd.Align.CENTER, bd.Align.CENTER),
+        )
+        # Bolt locations sit on the face, pointing into the plate, so the
+        # boom is from local z=-w to 0.
+        for bolt_azimuth, bolt in bolts:
+            if bolt_azimuth == azimuth:
+                boom -= cylinder_along(bolt, d, -w - 1, 1)
+        assert isinstance(boom, bd.Part)
+        booms.append(boom)
+
+    centre_boom = socket_location(spec, spec.floor_z) * bd.Box(
+        w, w, length, align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN)
+    )
+    for bolt in center_bolt_locations(spec):
+        centre_boom -= cylinder_along(bolt, d, -w, w)
+    assert isinstance(centre_boom, bd.Part)
+    booms.append(centre_boom)
+    return booms
+
+
+@dataclass
+class YagiFrame:
+    """Where a yagi's boom is, for placing its elements."""
+
+    front_bolt: Vec3  # On the boom's centreline.
+    forward: Vec3  # Along the boom, towards the elements.
+    across: Vec3  # Square to the boom and to the bolts.
+    bolt_axis: Vec3  # Square to the boom, along the bolts.
+
+
+def yagi_frames(spec: Spec) -> list[YagiFrame]:
+    """Each yagi's boom frame: the outer yagis, then the centre one."""
+    w = spec.boom_width
+    frames: list[YagiFrame] = []
+    for azimuth in spec.outer_azimuths_deg:
+        f = face_frame(spec, azimuth)
+        bolt = face_point(spec, azimuth, spec.front_bolt_slant)
+        frames.append(
+            YagiFrame(
+                front_bolt=add(bolt, f.normal, w / 2),
+                forward=f.up_slope,
+                across=f.tangent,
+                bolt_axis=f.normal,
             )
         )
-    booms.append(
-        socket_location(spec, spec.floor_z)
-        * bd.Box(
-            w,
-            w,
-            length,
-            align=(bd.Align.CENTER, bd.Align.CENTER, bd.Align.MIN),
+    phi = math.radians(spec.center_bolt_azimuth_deg)
+    frames.append(
+        YagiFrame(
+            front_bolt=(0.0, 0.0, spec.center_bolt_z[1]),
+            forward=(0.0, 0.0, 1.0),
+            across=(-math.sin(phi), math.cos(phi), 0.0),
+            bolt_axis=(math.cos(phi), math.sin(phi), 0.0),
         )
     )
-    return booms
+    return frames
+
+
+@dataclass
+class Element:
+    """A yagi element: a straight rod, centred on the boom."""
+
+    centre: Vec3
+    axis: Vec3  # Unit vector along the rod.
+    length: float
+
+    def ends(self) -> tuple[Vec3, Vec3]:
+        """Both tips of the rod."""
+        half = self.length / 2
+        return add(self.centre, self.axis, -half), add(
+            self.centre, self.axis, half
+        )
+
+    def solid(self, diameter: float) -> bd.Part:
+        """Make the rod as a cylinder."""
+        loc = along_axis(self.centre, self.axis, perpendicular(self.axis))
+        half = self.length / 2
+        return cylinder_along(loc, diameter, -half, half)
+
+
+def perpendicular(v: Vec3) -> Vec3:
+    """Any unit vector square to v."""
+    x, y, z = v
+    p = (-y, x, 0.0) if abs(z) < 0.9 else (0.0, -z, y)  # noqa: PLR2004
+    n = math.hypot(*p)
+    return (p[0] / n, p[1] / n, p[2] / n)
+
+
+def yagi_elements(spec: Spec, yagi: YagiFrame) -> tuple[Element, Element]:
+    """Place a yagi's reflector and driven element."""
+    roll = math.radians(spec.element_roll_deg)
+    axis = add(
+        add((0, 0, 0), yagi.across, math.cos(roll)),
+        yagi.bolt_axis,
+        math.sin(roll),
+    )
+    reflector_at = spec.reflector_offset
+    driven_at = reflector_at + spec.driven_element_spacing
+    return (
+        Element(
+            add(yagi.front_bolt, yagi.forward, reflector_at),
+            axis,
+            spec.reflector_length,
+        ),
+        Element(
+            add(yagi.front_bolt, yagi.forward, driven_at),
+            axis,
+            spec.driven_element_length,
+        ),
+    )
+
+
+def report_driven_elements(spec: Spec) -> None:
+    """Log the circle the outer yagis' driven elements sit on."""
+    wavelength = 299_792.458 / spec.design_frequency_mhz  # mm
+    frames = yagi_frames(spec)
+    outer = [yagi_elements(spec, y)[1] for y in frames[:-1]]
+    centre = yagi_elements(spec, frames[-1])[1]
+
+    feed_radius = math.hypot(outer[0].centre[0], outer[0].centre[1])
+    tip_radius = max(math.hypot(x, y) for e in outer for x, y, _ in e.ends())
+    logger.info(
+        f"Driven elements (outer yagis): centres on a circle of radius "
+        f"{feed_radius:.0f} mm ({feed_radius / wavelength:.2f} wavelengths "
+        f"at {spec.design_frequency_mhz:.0f} MHz), "
+        f"{outer[0].centre[2]:.0f} mm above the base. All of each element "
+        f"fits in a circle of radius {tip_radius:.0f} mm."
+    )
+    logger.info(
+        f"Driven element (centre yagi): {centre.centre[2]:.0f} mm above "
+        "the base, on the axis."
+    )
+
+
+def check_elements(spec: Spec, part: bd.Part | bd.Compound) -> None:
+    """Warn if an element hits the frame, base, a boom, or an element."""
+    booms = boom_placeholders(spec)
+    rods = [
+        (i, name, element.solid(spec.element_diameter))
+        for i, yagi in enumerate(yagi_frames(spec))
+        for name, element in zip(
+            ("reflector", "driven element"),
+            yagi_elements(spec, yagi),
+            strict=True,
+        )
+    ]
+    for i, name, rod in rods:
+        if rod.bounding_box().min.Z < 0:
+            logger.warning(f"Yagi {i}'s {name} reaches below the base.")
+        if (rod & part).volume > EPS:
+            logger.warning(f"Yagi {i}'s {name} runs into the frame.")
+        for j, boom in enumerate(booms):
+            if j != i and (rod & boom).volume > EPS:
+                logger.warning(f"Yagi {i}'s {name} runs into boom {j}.")
+    for a, (i, name_i, rod_i) in enumerate(rods):
+        for j, name_j, rod_j in rods[a + 1 :]:
+            if j != i and (rod_i & rod_j).volume > EPS:
+                logger.warning(
+                    f"Yagi {i}'s {name_i} runs into yagi {j}'s {name_j}."
+                )
 
 
 def check_clearances(spec: Spec, part: bd.Part | bd.Compound) -> None:
@@ -738,11 +899,27 @@ def assembly(spec: Spec, part: bd.Part | bd.Compound) -> bd.Compound:
         named(boom, f"boom_{i}", "silver")
         for i, boom in enumerate(boom_placeholders(spec))
     ]
+    elements: list[bd.Part] = []
+    for i, yagi in enumerate(yagi_frames(spec)):
+        reflector, driven = yagi_elements(spec, yagi)
+        elements += [
+            named(
+                reflector.solid(spec.element_diameter),
+                f"reflector_{i}",
+                "darkorange",
+            ),
+            named(
+                driven.solid(spec.element_diameter),
+                f"driven_element_{i}",
+                "firebrick",
+            ),
+        ]
     return bd.Compound(
         label="antenna_frame_assembly",
         children=[
             named(part, "frame"),
             bd.Compound(label="booms", children=booms),
+            bd.Compound(label="elements", children=elements),
         ],
     )
 
@@ -756,9 +933,11 @@ if __name__ == "__main__":
         f"along azimuth {spec.center_bolt_azimuth_deg} deg."
     )
     report_bolts(spec)
+    report_driven_elements(spec)
 
     frame_part = frame(spec)
     check_clearances(spec, frame_part)
+    check_elements(spec, frame_part)
     parts = {
         "antenna_frame": frame_part,
         "antenna_frame_assembly": show(assembly(spec, frame_part)),

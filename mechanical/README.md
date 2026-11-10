@@ -23,7 +23,7 @@ A 3D-printed cylinder, 210 mm across, that stands on a plywood base and holds si
 | File                            | Print | Notes                                                              |
 |---------------------------------|-------|--------------------------------------------------------------------|
 | `antenna_frame.stl`             | 1     | Base down. The plate's underside overhangs 50° from vertical between the ribs. |
-| `antenna_frame_assembly.*`      | -     | Fit check only: the frame with a stub of each boom in place.       |
+| `antenna_frame_assembly.*`      | -     | Fit check only: the frame with each boom, reflector, and driven element in place. |
 
 ### Shape
 
@@ -49,6 +49,8 @@ Edit the `Spec` defaults in `cad/antenna_frame.py`. The frame's height and the f
 - **`boom_width`**, **`bolt_spacing`**: 15 mm booms, 46 mm between bolts.
 - **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt, down the face (15 mm). The bolts stay put, so a longer overhang makes the floor smaller and the frame taller.
 - **`min_bolt_tail_length`**: Sets how high the dish sits. See [Mounting](#mounting).
+- **`reflector_length`**, **`reflector_offset`**, **`driven_element_length`**, **`driven_element_spacing`**: Yagi elements, for the assembly view. The reflector (340 mm) is 75 mm forward of the front bolt, and the driven element (gamma match, so one continuous rod) is 155 mm further on. The driven element's length is a placeholder. The build logs the radius of the circle the outer driven elements sit on, and warns if any element hits the frame, the base, a boom, or another element.
+- **`element_roll_deg`**: Elements' rotation about the boom. At 0 they're square to the bolts (the outer yagis' elements are horizontal). At 90 they're parallel to the bolts.
 - **`inner_screw_ring_diameter`**, **`outer_screw_ring_diameter`**, **`screw_hole_diameter`**: Wood screw positions and size.
 
 The build fails if a boom would hit the frame, the centre yagi's bolts, or a screw bore (so the screwdriver can reach every screw).

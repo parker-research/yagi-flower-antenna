@@ -633,11 +633,11 @@ def assembly(spec: Spec) -> bd.Compound:
         for i, (x, y) in enumerate(mounting_hole_positions(), start=1)
     ]
     spacer_compound = bd.Compound(
-        label="enclosure_spacers",
+        label="enclosure_3d_printed_spacers",
         children=spacer_set,
     )
     return bd.Compound(
-        label="enclosure_assembly",
+        label="enclosure_3d_printed_assembly",
         children=[
             named(tray(spec), "tray", "dimgray"),
             named(pcb_placeholder(spec), "pcb", "forestgreen"),
@@ -650,10 +650,10 @@ def assembly(spec: Spec) -> bd.Compound:
 if __name__ == "__main__":
     spec = Spec()
     parts = {
-        "enclosure_tray": tray(spec),
-        "enclosure_lid": lid(spec),
-        "enclosure_spacers": spacers(spec),
-        "enclosure_assembly": show(assembly(spec)),
+        "enclosure_3d_printed_tray": tray(spec),
+        "enclosure_3d_printed_lid": lid(spec),
+        "enclosure_3d_printed_spacers": spacers(spec),
+        "enclosure_3d_printed_assembly": show(assembly(spec)),
     }
 
     logger.info("Showing CAD model(s)")

@@ -11,13 +11,13 @@ In development. Expected completion: 2026-12-01.
 ## Parts
 
 1. Antennas (6x yagi antennas, approx. 7 dBi each)
-2. Structural mount for antennas
+2. Structural mount for antennas (see [`mechanical/`](mechanical/README.md))
 3. SP8T RF switch PCB
     - Microcontroller
     - SP8T RF switch IC (SKY13418)
     - LNAs between each antenna port and the RF switch
     - SMA ports to each antenna + common
-    - 3D-printed enclosure (see [`enclosure/`](enclosure/README.md))
+    - 3D-printed enclosure (see [`mechanical/`](mechanical/README.md))
 4. Firmware for PCB microcontroller, masquerading as an antenna rotator (see [`firmware/`](firmware/README.md))
 5. Cables to each antenna
 

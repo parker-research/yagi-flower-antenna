@@ -1,4 +1,4 @@
-name: Enclosure CAD
+name: Mechanical CAD
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: enclosure
+    working-directory: mechanical
 
 jobs:
   lint-and-build:
@@ -43,6 +43,6 @@ jobs:
       - name: Upload CAD build products
         uses: actions/upload-artifact@v7
         with:
-          name: enclosure-cad-${{ github.sha }}
-          path: enclosure/build/
+          name: mechanical-cad-${{ github.sha }}
+          path: mechanical/build/
           retention-days: 30

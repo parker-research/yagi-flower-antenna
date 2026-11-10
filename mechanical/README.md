@@ -4,7 +4,7 @@ CAD models for the yagi flower, written in [build123d](https://github.com/gumyr/
 
 | Script                         | What                                                           |
 |--------------------------------|----------------------------------------------------------------|
-| `cad/antenna_frame.py`         | [Antenna frame](#antenna-frame): holds all 6 yagis, on a plywood base. |
+| `cad/antenna_frame.py`         | [Antenna frame](#antenna-frame): hub and 5 arms that hold all 6 yagis, on a plywood base. |
 | `cad/enclosure_3d_printed.py`  | [Enclosure (3D-printed)](#enclosure-3d-printed) for the Antenna-Array-Switch-PCB. |
 
 ## Build
@@ -18,42 +18,47 @@ uv run python cad/enclosure_3d_printed.py   # Likewise
 
 ## Antenna Frame
 
-A 3D-printed cylinder, 210 mm across, that stands on a plywood base and holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around it, pointing outwards at 40° above the horizon. The sixth stands in a socket in the middle, pointing straight up.
+A 3D-printed frame, in six parts, that stands on a plywood base and holds six yagis with 15 × 15 mm square booms. Five yagis are spread evenly around it, pointing outwards at 40° above the horizon. The sixth stands in the middle, pointing straight up. All elements are horizontal.
 
 | File                            | Print | Notes                                                              |
 |---------------------------------|-------|--------------------------------------------------------------------|
-| `antenna_frame.stl`             | 1     | Base down. The plate's underside overhangs 50° from vertical between the ribs. |
-| `antenna_frame_assembly.*`      | -     | Fit check only: the frame with each boom, reflector, and driven element in place. |
+| `antenna_frame_hub.stl`         | 1     | Base down. About 134 × 141 × 108 mm.                               |
+| `antenna_frame_arm.stl`         | 5     | Base down. About 165 × 46 × 89 mm. The ramp's underside overhangs 50° from vertical. |
+| `antenna_frame_assembly.*`      | -     | Fit check only: hub, arms, booms, reflectors, and driven elements in place. |
 
 ### Shape
 
-A pentagonal dish is sunk into the top of the cylinder: a flat floor, and five flat faces sloping up at 40°. Each outer yagi's boom lies on top of one face and runs out over the rim. Each face is kept flat for 5 mm either side of its boom where the dish is trimmed round inside the rim.
+- **Hub**: A hollow pentagonal block, open underneath, with ribs and screw towers inside. A square socket on top holds the centre yagi.
+- **Arms**: Each one bolts to a flat side of the hub and runs outwards along the base, then rises as a ramp at 40°. The outer yagi's boom lies on top of the ramp. Hollow and open underneath.
 
-Under the dish, the frame is hollow and open at the bottom. The sloped plate is held up by the full-height outer wall, five radial ribs (between the yagis), and a column under the floor. All of them stand directly on the base, so loads go straight down into the plywood.
+Every part stands directly on the plywood, so loads go straight down into it. The whole frame is about 450 mm across.
+
+How far out the arms reach is worked out by the build. Each ramp starts just far enough out that every element stays at least `min_element_clearance` (25 mm) from every other yagi's elements and from the base. With the defaults, the ramps start 161 mm from the centre, and the outer driven elements sit on a circle of radius 379 mm (0.55 wavelengths at 435 MHz). The build logs these, and fails if a part won't fit the printer (`printer_bed_size`, `printer_max_height`).
 
 ### Mounting
 
-Everything uses M5 bolts, two per yagi, 46 mm apart, with M5 nuts pressed into hex pockets in the frame.
+Everything uses M5 bolts with M5 nuts pressed into hex pockets.
 
-- **Outer yagis**: The bolts go down through the boom and the plate, into nuts in pockets on the plate's underside (press them in from below before fixing the frame down). The tails run outwards and down into the hollow, and through holes in the outer wall if they reach it. The dish sits high enough to leave `min_bolt_tail_length` (50 mm) under the nut before the lower bolts' tails reach the base, and about 90 mm for the upper bolts. Bolts are fed in from above the boom. The lower ones have 37 mm of room (bolt plus head) before the centre socket, which is enough for M5×30. The build warns if it drops under `min_bolt_feed_length`.
-- **Centre yagi**: The boom stands in the square socket, on the floor. Two horizontal bolts go through the socket and the boom, into nuts on the far side of the socket. The bolt line is cut right through the frame on both sides (head-sized on the head side), aimed between the outer yagis, so these bolts can be any length.
+- **Arms to hub**: Two horizontal bolts per arm, put in from inside the hub (from underneath), through the hub's side and the arm's end wall, into nuts on the inside of the arm (M5×25). Bolt the arms on before fixing the frame down.
+- **Outer yagis**: Two bolts, 46 mm apart, go down through the boom and the ramp into nuts in pockets on the ramp's underside (press them in from below). The tails run down into the arm, and out through its end wall if they reach it. The hub and arms are high enough to leave `min_bolt_tail_length` (50 mm) under the nut before the lower bolts' tails reach the base, and about 90 mm for the upper ones.
+- **Centre yagi**: The boom stands in the socket. Two horizontal bolts go through the socket and the boom, into nuts on the far side of the socket, aimed between the arms, so they can be any length.
 
-Ten wood screws (e.g. #8 or M4) fix the frame to the plywood base, all between the yagis: five through the dish floor and five through the sloped plate. Each one drops down a 10 mm bore in a solid tower and seats 6 mm above the base. Fit them before the antennas.
+Wood screws (e.g. #8 or M4) fix every part to the plywood base: five through the hub (between the arms), and four through each arm (two along the flat part, two either side of the boom on the ramp). Each one drops down a 10 mm bore in a solid tower and seats 6 mm above the base. The build checks that no boom blocks a bore.
 
 ### Configuration
 
-Edit the `Spec` defaults in `cad/antenna_frame.py`. The frame's height and the floor's size are worked out from these.
+Edit the `Spec` defaults in `cad/antenna_frame.py`.
 
 - **`outer_antenna_count`**, **`outer_antenna_elevation_deg`**: Five outer yagis, at 40°.
-- **`rim_diameter`**: 210 mm.
 - **`boom_width`**, **`bolt_spacing`**: 15 mm booms, 46 mm between bolts.
-- **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt, down the face (15 mm). The bolts stay put, so a longer overhang makes the floor smaller and the frame taller.
-- **`min_bolt_tail_length`**: Sets how high the dish sits. See [Mounting](#mounting).
-- **`reflector_length`**, **`reflector_offset`**, **`driven_element_length`**, **`driven_element_spacing`**: Yagi elements, for the assembly view. The reflector (340 mm) is 75 mm forward of the front bolt, and the driven element (gamma match, so one continuous rod) is 155 mm further on. The driven element's length is a placeholder. The build logs the radius of the circle the outer driven elements sit on, and warns if any element hits the frame, the base, a boom, or another element.
-- **`element_roll_deg`**: Elements' rotation about the boom. At 0 they're square to the bolts (the outer yagis' elements are horizontal). At 90 they're parallel to the bolts.
-- **`inner_screw_ring_diameter`**, **`outer_screw_ring_diameter`**, **`screw_hole_diameter`**: Wood screw positions and size.
+- **`boom_rear_overhang`**: How far an outer boom extends behind its lower bolt, down the ramp (15 mm).
+- **`reflector_length`**, **`reflector_offset`**, **`driven_element_length`**, **`driven_element_spacing`**: Yagi elements. The reflector (340 mm) is 75 mm forward of the front bolt, and the driven element (gamma match, so one continuous rod) is 155 mm further on. The driven element's length is a placeholder.
+- **`min_element_clearance`**: Sets how far out the arms reach (see [Shape](#shape)).
+- **`printer_bed_size`**, **`printer_max_height`**: 210 mm.
+- **`hub_apothem`**: Hub size (60 mm, centre to each flat side).
+- **`min_bolt_tail_length`**: Sets the height of the hub and the arms' flat part.
 
-The build fails if a boom would hit the frame, the centre yagi's bolts, or a screw bore (so the screwdriver can reach every screw).
+The build fails if a boom would hit the frame or a screw bore, and warns if an element would hit the frame or another yagi's boom.
 
 ## Enclosure (3D-printed)
 

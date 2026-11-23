@@ -65,9 +65,29 @@ static void test_choose_omni_fallback(void) {
     CHECK(antenna_select_choose(90.0f + 30.0f * 1.4f, 0.0f, NO_PORT) == YAGI_E, "edge of fallback limit");
 }
 
+static void test_elevation_past_zenith(void) {
+    // "Flip" tracking: (az, el) with 90 < el < 180 points the same way as (az + 180, 180 - el).
+    for (uint8_t port = 0; port < BOARD_PORT_COUNT; port++) {
+        if (antenna_config_ports[port].type == ANTENNA_CONFIG_TYPE_NONE) continue;
+        for (int az = 0; az < 360; az += 15) {
+            for (int el = 95; el < 180; el += 10) {
+                const float flipped = antenna_select_normalized_offset(port, (float)az, (float)el);
+                const float normal = antenna_select_normalized_offset(port, (float)(az + 180), (float)(180 - el));
+                CHECK_NEAR(flipped, normal, 1e-3f);
+            }
+        }
+    }
+
+    // Selection follows the flipped direction, not the commanded azimuth.
+    CHECK(antenna_select_choose(0.0f, 145.0f, NO_PORT) == YAGI_S, "az=0 el=145 is Yagi S boresight");
+    CHECK(antenna_select_choose(180.0f, 145.0f, NO_PORT) == YAGI_N, "az=180 el=145 is Yagi N boresight");
+    CHECK(antenna_select_choose(270.0f, 180.0f, NO_PORT) == YAGI_E, "az=270 el=180 is Yagi E boresight");
+    CHECK(antenna_select_choose(190.0f, 92.0f, NO_PORT) == QFH_N, "just past zenith, north side");
+}
+
 static void test_choose_never_unused_port(void) {
     for (int az = -180; az <= 540; az += 5) {
-        for (int el = -10; el <= 100; el += 5) {
+        for (int el = -10; el <= 180; el += 5) {
             const uint8_t port = antenna_select_choose((float)az, (float)el, NO_PORT);
             CHECK(port < BOARD_PORT_COUNT && antenna_config_ports[port].type != ANTENNA_CONFIG_TYPE_NONE,
                   "az=%d el=%d -> port %u", az, el, port);
@@ -100,6 +120,7 @@ int main(void) {
     test_normalized_offset();
     test_choose_on_boresight();
     test_choose_omni_fallback();
+    test_elevation_past_zenith();
     test_choose_never_unused_port();
     test_choose_hysteresis();
     return TEST_CHECK_RESULT();

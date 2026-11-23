@@ -102,6 +102,16 @@ static void test_set_then_get_on_one_line(void) {
     CHECK_LINE("AZ90.0 EL30.0 AZ EL", true, "AZ90.0 EL30.0\n");
 }
 
+static void test_elevation_past_zenith(void) {
+    // Flip-mode elevations (90 < el < 180) are accepted and echoed back unchanged.
+    reset_target(0.0f, 0.0f);
+    CHECK_LINE("AZ10.0 EL135.0", true, "");
+    CHECK(s_set_target_calls == 1, "calls=%d", s_set_target_calls);
+    CHECK_NEAR(s_target_az_deg, 10.0f, 1e-4f);
+    CHECK_NEAR(s_target_el_deg, 135.0f, 1e-4f);
+    CHECK_LINE("AZ EL", true, "AZ10.0 EL135.0\n");
+}
+
 static void test_other_commands(void) {
     reset_target(1.0f, 2.0f);
     CHECK_LINE("VE", true, "VEyagi-flower-test\n");
@@ -123,6 +133,7 @@ int main(void) {
     test_get_position();
     test_set_position();
     test_set_then_get_on_one_line();
+    test_elevation_past_zenith();
     test_other_commands();
     test_rejects_garbage();
     return TEST_CHECK_RESULT();
